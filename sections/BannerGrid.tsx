@@ -41,7 +41,7 @@ export default function BannnerGrid({
   banners = [],
 }: Props) {
   return (
-    <Container>
+    <Container >
       <section class="w-full px-4 md:px-0 mx-auto">
         {title &&
           (

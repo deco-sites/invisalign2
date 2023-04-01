@@ -36,6 +36,7 @@ const options: Omit<Options, "selfURL"> = {
       colors: {
         "default": "#FFFFFF",
         "header": "#FFFFFF",
+        "blue" :"rgb(57, 255, 164)",
         "badge": "#8C3D3D", // shopping cart tem isso tambem
         "footer": "#003232",
         "interactive": "#161616",
@@ -121,6 +122,7 @@ const options: Omit<Options, "selfURL"> = {
       xl: "1280px",
       "2xl": "1536px",
     },
+    
   },
   preflight: (preflight) => ({
     ...preflight,

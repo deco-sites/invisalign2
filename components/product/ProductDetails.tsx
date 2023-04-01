@@ -53,7 +53,7 @@ function Details({ page }: { page: ProductDetailsPage }) {
           {[front, back ?? front].map((img, index) => (
             <Image
               style={{ aspectRatio: "360 / 500" }}
-              class="snap-center min-w-[100vw] sm:min-w-0 sm:w-auto sm:h-[600px]"
+              class="min-w-[100vw] sm:min-w-0 sm:w-auto sm:h-[600px]"
               sizes="(max-width: 640px) 100vw, 30vw"
               src={img.url!}
               alt={img.alternateName}

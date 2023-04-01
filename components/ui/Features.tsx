@@ -3,17 +3,8 @@ import Text from "$store/components/ui/Text.tsx";
 import Container from "$store/components/ui/Container.tsx";
 
 export interface Feature {
-  /**
-   * @description Image src
-   */
   icon: AvailableIcons;
-  /**
-   * @description Title
-   */
-  title: string;
-  /**
-   * @description Description and Image alt text
-   */
+   title: string;
   description: string;
 }
 

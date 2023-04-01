@@ -1,42 +1,28 @@
 import Text from "$store/components/ui/Text.tsx";
-import Icon from "$store/components/ui/Icon.tsx";
 import Button from "$store/components/ui/Button.tsx";
-import Slider from "$store/components/ui/Slider.tsx";
-import SliderControllerJS from "$store/islands/SliderJS.tsx";
 import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
-import { useId } from "preact/hooks";
-import { animation, keyframes, tw } from "twind/css";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 
 export interface Banner {
-  /** @description desktop otimized image */
+  
   desktop: LiveImage;
-  /** @description mobile otimized image */
   mobile: LiveImage;
-  /** @description Image's alt text */
   alt: string;
+  width?: number,
+  height?: number, 
   action?: {
-    /** @description when user clicks on the image, go to this link */
     href: string;
-    /** @description Image text title */
     title: string;
-    /** @description Image text subtitle */
+    legend1: string;
+    legend2: string;
     subTitle: string;
-    /** @description Button label */
     label: string;
   };
 }
 
 export interface Props {
   images?: Banner[];
-  /**
-   * @description Check this option when this banner is the biggest image on the screen for image optimizations
-   */
   preload?: boolean;
-  /**
-   * @title Autoplay interval
-   * @description time (in seconds) to start the carousel autoplay
-   */
   interval?: number;
 }
 
@@ -46,12 +32,13 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
     mobile,
     desktop,
     action,
+    width = 800, 
+    height =800
   } = image;
 
-  return (
-    <div class="relative h-[600px] min-w-[100vw] overflow-y-hidden">
-      <a href={action?.href ?? "#"} aria-label={action?.label}>
-        <Picture class="w-full" preload={lcp}>
+return (
+  <>
+        <Picture preload={lcp} class="w-1/2">
           <Source
             media="(max-width: 767px)"
             fetchPriority={lcp ? "high" : "auto"}
@@ -63,141 +50,233 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
             media="(min-width: 768px)"
             fetchPriority={lcp ? "high" : "auto"}
             src={desktop}
-            width={1440}
-            height={600}
+            width={width}
+            height={height}
           />
-          <img
-            class="object-cover w-full sm:h-full"
+          <img 
             loading={lcp ? "eager" : "lazy"}
             src={desktop}
             alt={alt}
           />
         </Picture>
         {action && (
-          <div
-            class="absolute top-0 bottom-0 m-auto left-0 right-0 sm:right-auto sm:left-[12%] max-h-min max-w-[235px] flex flex-col gap-4 bg-hover-inverse p-4 rounded"
-            style={{ backdropFilter: "blur(8px)" }}
-          >
-            <Text variant="heading-1" tone="default-inverse">
+          <div class="w-1/2 flex flex-col bg-blue">
+            <Text variant="heading-3">
               {action.title}
             </Text>
-            <Text variant="heading-3" tone="default-inverse">
+            <Text variant="heading-3">
+              {action.legend1}
+            </Text>
+            <Text variant="heading-3">
+              {action.legend2}
+            </Text>
+            <Text variant="heading-3">
               {action.subTitle}
             </Text>
             <Button variant="secondary">{action.label}</Button>
           </div>
         )}
-      </a>
-    </div>
+      </>
+   
   );
 }
+function BannerProduct({ image, lcp }: { image: Banner; lcp?: boolean }) {
+  const {
+    alt,
+    mobile,
+    desktop,
+    action,
+    width = 600, 
+    height= 600
+  } = image;
 
-function Dots({ images, interval = 0 }: Props) {
-  return (
-    <>
-      <style
-        dangerouslySetInnerHTML={{
-          __html: `
-          @property --dot-progress {
-            syntax: '<percentage>';
-            inherits: false;
-            initial-value: 0%;
-          }`,
-        }}
-      >
-      </style>
-      <ol class="flex items-center justify-center col-span-full gap-4 z-10 row-start-4">
-        {images?.map((_, index) => (
-          <li class="h-full">
-            <button
-              data-dot={index}
-              aria-label={`go to slider item ${index}`}
-              class="h-full rounded focus:outline-none group"
-            >
-              <div
-                class={tw`group-disabled:${
-                  animation(
-                    `${interval}s ease-out 1 forwards`,
-                    keyframes`
-                      from: {
-                        --dot-progress: 0%;
-                      }
-                      to {
-                        --dot-progress: 100%;
-                      }
-                    `,
-                  )
-                } w-16 sm:w-20 h-0.5`}
-                style={{
-                  background:
-                    "linear-gradient(to right, #FFFFFF var(--dot-progress), rgba(255, 255, 255, 0.4) var(--dot-progress))",
-                }}
-              />
-            </button>
-          </li>
-        ))}
-      </ol>
-    </>
-  );
-}
-
-function Controls() {
-  return (
-    <>
-      <div class="flex items-center justify-center z-10 col-start-1 row-start-2">
-        <Button
-          class="h-12 w-12"
-          variant="icon"
-          data-slide="prev"
-          aria-label="Previous item"
-        >
-          <Icon
-            class="text-default-inverse"
-            size={20}
-            id="ChevronLeft"
-            strokeWidth={3}
-          />
-        </Button>
+return (
+  <div class="relative">
+          <div class="m-10 box-border z-20">
+            <div class="flex h-[600px] p-10 relative z-10">
+              <Picture preload={lcp} class="w-1/2">
+                <Source
+                  media="(max-width: 767px)"
+                  fetchPriority={lcp ? "high" : "auto"}
+                  src={mobile}
+                  width={360}
+                  height={600}
+                />
+                <Source
+                  media="(min-width: 768px)"
+                  fetchPriority={lcp ? "high" : "auto"}
+                  src={desktop}
+                  width={width}
+                  height={height}
+                />
+                <img 
+                  loading={lcp ? "eager" : "lazy"}
+                  src={desktop}
+                  alt={alt}
+                />
+              </Picture>
+              {action && (
+                <div class="flex flex-col bg-blue h-[400px] w-1/2">
+                  <Text variant="heading-3">
+                    {action.title}
+                  </Text>
+                  <Text variant="heading-3">
+                    {action.legend1}
+                  </Text>
+                  <Text variant="heading-3">
+                    {action.legend2}
+                  </Text>
+                  <Text variant="heading-3">
+                    {action.subTitle}
+                  </Text>
+                  <Button variant="secondary">{action.label}</Button>
+                </div>
+              )}
+               </div>
+            <div class="h-64 w-64 bg-gray-600 absolute z-0 top-0 left-0 ">teste</div>
+            <div class="h-64 w-64 bg-gray-600 absolute z-0 bottom-0 right-0">teste</div>
+          </div>
       </div>
-      <div class="flex items-center justify-center z-10 col-start-3 row-start-2">
-        <Button
-          class="h-12 w-12"
-          variant="icon"
-          data-slide="next"
-          aria-label="Next item"
-        >
-          <Icon
-            class="text-default-inverse"
-            size={20}
-            id="ChevronRight"
-            strokeWidth={3}
+    );
+}
+function BannerCarouselDif({ image, lcp }: { image: Banner; lcp?: boolean }) {
+  const {
+    alt,
+    mobile,
+    desktop,
+    action,
+    width = 800, 
+    height =800
+  } = image;
+
+return (
+  <>
+        <Picture preload={lcp} class="w-1/2">
+          <Source
+            media="(max-width: 767px)"
+            fetchPriority={lcp ? "high" : "auto"}
+            src={mobile}
+            width={360}
+            height={600}
           />
-        </Button>
-      </div>
-    </>
+          <Source
+            media="(min-width: 768px)"
+            fetchPriority={lcp ? "high" : "auto"}
+            src={desktop}
+            width={width}
+            height={height}
+          />
+          <img 
+            loading={lcp ? "eager" : "lazy"}
+            src={desktop}
+            alt={alt}
+          />
+        </Picture>
+        <div>Mensagem personalizada</div>
+        {action && (
+          <div class="w-1/2 flex flex-col">
+            <Text variant="heading-3">
+              {action.title}
+            </Text>
+            <Text variant="heading-3">
+              {action.legend1}
+            </Text>
+            <Text variant="heading-3">
+              {action.legend2}
+            </Text>
+            <Text variant="heading-3">
+              {action.subTitle}
+            </Text>
+            <Button variant="secondary">{action.label}</Button>
+          </div>
+        )}
+      </>
+   
+  );
+}
+function BannerFullScreen({ image, lcp }: { image: Banner; lcp?: boolean }) {
+  const {
+    alt,
+    mobile,
+    desktop,
+    action,
+    width = 800, 
+    height =800
+  } = image;
+
+return (
+  <>
+        <Picture preload={lcp} class="w-1/2">
+          <Source
+            media="(max-width: 767px)"
+            fetchPriority={lcp ? "high" : "auto"}
+            src={mobile}
+            width={360}
+            height={600}
+          />
+          <Source
+            media="(min-width: 768px)"
+            fetchPriority={lcp ? "high" : "auto"}
+            src={desktop}
+            width={width}
+            height={height}
+          />
+          <img 
+            loading={lcp ? "eager" : "lazy"}
+            src={desktop}
+            alt={alt}
+          />
+        </Picture>
+         <div>Mensagem personalizada</div>
+        {action && (
+          <div class="w-1/2 flex flex-col">
+            <Text variant="heading-3">
+              {action.title}
+            </Text>
+            <Text variant="heading-3">
+              {action.legend1}
+            </Text>
+            <Text variant="heading-3">
+              {action.legend2}
+            </Text>
+            <Text variant="heading-3">
+              {action.subTitle}
+            </Text>
+            <Button variant="secondary">{action.label}</Button>
+          </div>
+        )}
+      </>
+   
   );
 }
 
-function BannerCarousel({ images, preload, interval }: Props) {
-  const id = useId();
 
-  return (
-    <div
-      id={id}
-      class="grid grid-cols-[48px_1fr_48px] sm:grid-cols-[120px_1fr_120px] grid-rows-[1fr_48px_1fr_48px]"
-    >
-      <Slider class="col-span-full row-span-full scrollbar-none gap-6">
-        {images?.map((image, index) => (
-          <BannerItem image={image} lcp={index === 0 && preload} />
-        ))}
-      </Slider>
+function BannerCarousel({ images, preload }: Props) {
+const styles = [
+    { display: 'flex', margin: '75px 0 0 0'},
+    { width: '1200px', margin: '75px auto 0', display: 'flex', flexDirection: 'row-reverse', height: '600px'},
+    { width: '1200px', height: '600px', margin: '0 auto' }
 
-      <Controls />
-
-      <Dots images={images} interval={interval} />
-
-      <SliderControllerJS rootId={id} interval={interval && interval * 1e3} />
-    </div>
+];
+    return (
+      <div>
+          {images?.map((image, index) => (
+            <div style={styles[index]}>
+               {index === 0 || index === 1 || index === 6 ? (
+                <BannerItem image={image} lcp={index === 0 && preload} />
+        ) : index === 2 || index === 3 || index === 7 ? (
+        <BannerProduct image={image} lcp={index === 2 && preload} />
+      ) : index === 4 ? (
+        <BannerCarouselDif image={image} lcp={index === 4 && preload} />
+      ) : index === 5 ? (
+        <BannerFullScreen image={image} lcp={index === 5 && preload} />
+      ) : (
+        <BannerProduct image={image} lcp={index === 0 && preload} />
+      )}
+            </div>
+          ))}
+      </div>
+    
   );
 }
 

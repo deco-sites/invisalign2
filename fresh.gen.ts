@@ -233,18 +233,29 @@ const manifest: DecoManifest = {
                   "format": "image-uri",
                   "type": "string",
                   "title": "Desktop",
-                  "description": "desktop otimized image",
                 },
                 "mobile": {
                   "format": "image-uri",
                   "type": "string",
                   "title": "Mobile",
-                  "description": "mobile otimized image",
                 },
                 "alt": {
                   "type": "string",
                   "title": "Alt",
-                  "description": "Image's alt text",
+                },
+                "width": {
+                  "type": [
+                    "number",
+                    "null",
+                  ],
+                  "title": "Width",
+                },
+                "height": {
+                  "type": [
+                    "number",
+                    "null",
+                  ],
+                  "title": "Height",
                 },
                 "action": {
                   "title": "Action",
@@ -258,6 +269,14 @@ const manifest: DecoManifest = {
                       "type": "string",
                       "title": "Title",
                     },
+                    "legend1": {
+                      "type": "string",
+                      "title": "Legend1",
+                    },
+                    "legend2": {
+                      "type": "string",
+                      "title": "Legend2",
+                    },
                     "subTitle": {
                       "type": "string",
                       "title": "Sub Title",
@@ -270,6 +289,8 @@ const manifest: DecoManifest = {
                   "required": [
                     "href",
                     "title",
+                    "legend1",
+                    "legend2",
                     "subTitle",
                     "label",
                   ],
@@ -289,16 +310,13 @@ const manifest: DecoManifest = {
               "null",
             ],
             "title": "Preload",
-            "description":
-              "Check this option when this banner is the biggest image on the screen for image optimizations",
           },
           "interval": {
             "type": [
               "number",
               "null",
             ],
-            "title": "Autoplay interval",
-            "description": "time (in seconds) to start the carousel autoplay",
+            "title": "Interval",
           },
         },
         "required": [],
@@ -457,17 +475,14 @@ const manifest: DecoManifest = {
                     },
                   ],
                   "title": "Icon",
-                  "description": "Image src",
                 },
                 "title": {
                   "type": "string",
                   "title": "Title",
-                  "description": "Title",
                 },
                 "description": {
                   "type": "string",
                   "title": "Description",
-                  "description": "Description and Image alt text",
                 },
               },
               "required": [
@@ -689,15 +704,38 @@ const manifest: DecoManifest = {
         "title": " Header",
         "type": "object",
         "properties": {
-          "alerts": {
-            "type": "array",
-            "items": {
-              "type": "string",
+          "image": {
+            "title": "Image",
+            "type": "object",
+            "properties": {
+              "src": {
+                "format": "image-uri",
+                "type": "string",
+                "title": "Src",
+              },
+              "alt": {
+                "type": [
+                  "string",
+                  "null",
+                ],
+                "title": "Alt",
+              },
+              "width": {
+                "type": "number",
+                "title": "Width",
+              },
+              "height": {
+                "type": "number",
+                "title": "Height",
+              },
             },
-            "title": "Alerts",
+            "required": [
+              "width",
+              "height",
+            ],
           },
           "searchbar": {
-            "title": "Search Bar",
+            "title": "Searchbar",
             "type": "object",
             "properties": {
               "placeholder": {
@@ -820,34 +858,28 @@ const manifest: DecoManifest = {
                 "href",
               ],
             },
-            "title": "Navigation items",
-            "description":
-              "Navigation items used both on mobile and desktop menus",
+            "title": "Nav Items",
           },
           "products": {
             "$id": "bae848f3957be1cb6ed2c2ac3847787272389ee9",
             "format": "live-function",
             "type": "string",
-            "title": "Product suggestions",
-            "description": "Product suggestions displayed on search",
+            "title": "Products",
           },
           "suggestions": {
             "$id": "fa622ecbfb24e1b878a945d22f51f46a3e939525",
             "format": "live-function",
             "type": "string",
-            "title": "Enable Top Search terms",
+            "title": "Suggestions",
           },
           "configVTEX": {
             "$id": "4a94f4ff0e8e4441f26651aaed22f0df82f38c93",
             "format": "live-function",
             "type": "string",
             "title": "Config V T E X",
-            "description": "vtex config used for search autocompletion;",
           },
         },
-        "required": [
-          "alerts",
-        ],
+        "required": [],
       },
       "outputSchema": null,
     },
