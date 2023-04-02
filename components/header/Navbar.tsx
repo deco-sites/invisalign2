@@ -6,8 +6,6 @@ import NavItem from "./NavItem.tsx";
 import { navbarHeight } from "./constants.ts";
 import type { INavItem } from "./NavItem.tsx";
 
-import HeaderSearchMenu from "$store/islands/HeaderSearchMenu.tsx";
-
 function Navbar({ items }: {
   items: INavItem[];
 }) {
