@@ -208,8 +208,8 @@ function BannerFullScreen({ image, lcp }: { image: Banner; lcp?: boolean }) {
 
 return (
   <>
-  <div class="relative flex justify-center items-center h-[500px]">
-        <Picture preload={lcp} class="absolute top-0 left-0 w-full h-full object-cover opacity-50">
+  <div class="relative flex justify-center items-center h-[400px] bg-black w-full">
+        <Picture preload={lcp} class="absolute top-0 left-0 w-full object-cover opacity-50">
           <Source
             media="(max-width: 767px)"
             fetchPriority={lcp ? "high" : "auto"}
@@ -228,6 +228,7 @@ return (
             loading={lcp ? "eager" : "lazy"}
             src={desktop}
             alt={alt}
+            class="w-full"
           />
         </Picture>
         <div class="inset-0 flex justify-center items-center">
@@ -251,7 +252,6 @@ return (
         </div>
       </div>
       </>
-   
   );
 }
 
@@ -263,15 +263,16 @@ const styles = [
     { width: '1200px', height: '600px', margin: '0 auto' },
     { width: '1200px', margin: '0 auto' },
     { width: '100%', },
-    { width: '1200px', margin: '75px 0 0 0'},
-    { width: '1200px', margin: '75px auto 0', display: 'flex'}
+    { width: '100%', margin: '75px 0 0 0'},
+    { width: '1200px', margin: '75px auto', display: 'flex', flexDirection: 'row-reverse'},
+    { width: '1200px', margin: '75px auto'}
 
 ];
     return (
       <div>
           {images?.map((image, index) => (
-            <div style={styles[index]}>
-               {index === 0 || index === 1 || index === 6 ? (
+        <div style={styles[index]}>
+        {index === 0 || index === 1 || index === 6 ? (
                 <BannerItem image={image} lcp={index === 0 && preload} />
         ) : index === 2 || index === 3 || index === 7 ? (
         <BannerProduct image={image} lcp={index === 2 && preload} />
