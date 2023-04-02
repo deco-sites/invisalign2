@@ -32,7 +32,7 @@ export interface Props {
     width: number,
     height: number
   };
-    navItems?: NavItem[];
+  navItems?: NavItem[];
   products?: LoaderReturnType<Product[] | null>;
   suggestions?: LoaderReturnType<Suggestion | null>;
   configVTEX?: LoaderReturnType<ClientConfigVTEX>;

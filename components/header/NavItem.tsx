@@ -1,6 +1,5 @@
 import Text from "$store/components/ui/Text.tsx";
 
-
 export interface INavItem {
   label: string;
   href: string;
