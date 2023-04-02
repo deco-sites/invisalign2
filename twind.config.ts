@@ -34,15 +34,20 @@ const options: Omit<Options, "selfURL"> = {
   theme: {
     extend: {
       colors: {
+        "black": "rgba(255, 0, 0, 0.8);",
         "default": "#FFFFFF",
         "header": "#FFFFFF",
-        "blue" :"rgb(57, 255, 164)",
+        "blue" :"#005BCA",
+        "pink": "#CF006F",
         "badge": "#8C3D3D", // shopping cart tem isso tambem
         "footer": "#003232",
         "interactive": "#161616",
         "interactive-inverse": "#FFFFFF",
         "hover": "rgba(0, 0, 0, 0.04)",
         "hover-inverse": "rgba(255, 255, 255, 0.4)",
+        "action-title" : "#009DF7",
+        "quadrado": "#C4D600",
+        "quadrado-blue": "#009ACE",        
       },
       textColor: {
         "default": "#161616",

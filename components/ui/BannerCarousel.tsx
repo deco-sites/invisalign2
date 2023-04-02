@@ -60,7 +60,7 @@ return (
           />
         </Picture>
         {action && (
-          <div class="w-1/2 flex flex-col bg-blue">
+          <div class="w-1/2 flex flex-col bg-black">
             <Text variant="heading-3">
               {action.title}
             </Text>
@@ -87,13 +87,13 @@ function BannerProduct({ image, lcp }: { image: Banner; lcp?: boolean }) {
     desktop,
     action,
     width = 600, 
-    height= 600
+    height= 400
   } = image;
 
 return (
-  <div class="relative">
-          <div class="m-10 box-border z-20">
-            <div class="flex h-[600px] p-10 relative z-10">
+  <div class="relative bg-yellow-700 mt-[45px]">
+          <div class="box-border z-20">
+            <div class="flex flex-row-reverse relative z-10 pt-12 pl-12 pb-12 pr-12">
               <Picture preload={lcp} class="w-1/2">
                 <Source
                   media="(max-width: 767px)"
@@ -116,7 +116,7 @@ return (
                 />
               </Picture>
               {action && (
-                <div class="flex flex-col bg-blue h-[400px] w-1/2">
+                <div class="flex flex-col bg-blue w-1/2 h-[368px]">
                   <Text variant="heading-3">
                     {action.title}
                   </Text>
@@ -151,6 +151,8 @@ function BannerCarouselDif({ image, lcp }: { image: Banner; lcp?: boolean }) {
 
 return (
   <>
+  <div>invisa é tratamento em 3 passos fáceis</div>
+    <div class="flex">
         <Picture preload={lcp} class="w-1/2">
           <Source
             media="(max-width: 767px)"
@@ -172,7 +174,6 @@ return (
             alt={alt}
           />
         </Picture>
-        <div>Mensagem personalizada</div>
         {action && (
           <div class="w-1/2 flex flex-col">
             <Text variant="heading-3">
@@ -190,6 +191,7 @@ return (
             <Button variant="secondary">{action.label}</Button>
           </div>
         )}
+        </div>
       </>
    
   );
@@ -200,13 +202,14 @@ function BannerFullScreen({ image, lcp }: { image: Banner; lcp?: boolean }) {
     mobile,
     desktop,
     action,
-    width = 800, 
-    height =800
+    width, 
+    height
   } = image;
 
 return (
   <>
-        <Picture preload={lcp} class="w-1/2">
+  <div class="relative flex justify-center items-center h-[500px]">
+        <Picture preload={lcp} class="absolute top-0 left-0 w-full h-full object-cover opacity-50">
           <Source
             media="(max-width: 767px)"
             fetchPriority={lcp ? "high" : "auto"}
@@ -218,8 +221,8 @@ return (
             media="(min-width: 768px)"
             fetchPriority={lcp ? "high" : "auto"}
             src={desktop}
-            width={width}
-            height={height}
+            width={1440}
+            height={500}
           />
           <img 
             loading={lcp ? "eager" : "lazy"}
@@ -227,9 +230,9 @@ return (
             alt={alt}
           />
         </Picture>
-         <div>Mensagem personalizada</div>
+        <div class="inset-0 flex justify-center items-center">
         {action && (
-          <div class="w-1/2 flex flex-col">
+          <div class="w-1/2 flex flex-col items-center">
             <Text variant="heading-3">
               {action.title}
             </Text>
@@ -245,6 +248,8 @@ return (
             <Button variant="secondary">{action.label}</Button>
           </div>
         )}
+        </div>
+      </div>
       </>
    
   );
@@ -255,7 +260,11 @@ function BannerCarousel({ images, preload }: Props) {
 const styles = [
     { display: 'flex', margin: '75px 0 0 0'},
     { width: '1200px', margin: '75px auto 0', display: 'flex', flexDirection: 'row-reverse', height: '600px'},
-    { width: '1200px', height: '600px', margin: '0 auto' }
+    { width: '1200px', height: '600px', margin: '0 auto' },
+    { width: '1200px', margin: '0 auto' },
+    { width: '100%', },
+    { width: '1200px', margin: '75px 0 0 0'},
+    { width: '1200px', margin: '75px auto 0', display: 'flex'}
 
 ];
     return (
