@@ -48,6 +48,7 @@ const options: Omit<Options, "selfURL"> = {
         "action-title" : "#009DF7",
         "quadrado": "#C4D600",
         "quadrado-blue": "#009ACE",        
+        "titles": "#3D3935"
       },
       textColor: {
         "default": "#161616",

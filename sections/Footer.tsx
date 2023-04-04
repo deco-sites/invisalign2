@@ -1,9 +1,8 @@
-export { default } from "$store/components/footer/Footer.tsx";
-export type {
-  IconItem,
-  Item,
-  Props,
-  Section,
-  StringItem,
-} from "$store/components/footer/Footer.tsx";
-export type { AvailableIcons } from "$store/components/ui/Icon.tsx";
+import Footer from "../components/footer/Footer.tsx";
+import type { Props } from "$store/components/footer/Footer.tsx";
+
+function FooterSection(props: Props) {
+  return <Footer {...props} />;
+}
+
+export default FooterSection;
