@@ -34,10 +34,16 @@ const options: Omit<Options, "selfURL"> = {
   theme: {
     extend: {
       colors: {
-        "black": "rgba(255, 0, 0, 0.8);",
+        "black": "rgb(90, 90, 90)",
+        "pink-title": "#e10098",
         "default": "#FFFFFF",
         "header": "#FFFFFF",
         "blue" :"#005BCA",
+        "strong-blue": "#0067ac",
+        "light-blue": "#1d93dd",
+        "blue-title": "#009ace;",
+        "green-home": "#C4D600",
+        "dark": "rgba(16, 5, 11, 0.95)",
         "pink": "#CF006F",
         "badge": "#8C3D3D", // shopping cart tem isso tambem
         "footer": "#003232",
@@ -59,7 +65,9 @@ const options: Omit<Options, "selfURL"> = {
         "section-title": "#161616",
         "positive": "#1A7346",
         "critical": "#B44125",
-        "warn": "#949695"
+        "warn": "#949695",
+        "default-title": "#009ace;"
+
       },
       borderColor: {
         "default": "#D4DBD7",

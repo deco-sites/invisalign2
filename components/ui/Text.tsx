@@ -4,6 +4,7 @@ import { forwardRef } from "preact/compat";
 type Props = JSX.IntrinsicElements["span"] & {
   tone?:
     | "default"
+    | "default-title"
     | "default-inverse"
     | "subdued"
     | "subdued-inverse"

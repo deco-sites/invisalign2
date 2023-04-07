@@ -1,7 +1,14 @@
 import Text from "$store/components/ui/Text.tsx";
 import NavBarFooter from "./NavBarFooter.tsx";
 import NavItemFooter from "./NavItemFooter.tsx";
+import Icon, { AvailableIcons } from "$store/components/ui/Icon.tsx";
+import type { HTML } from "deco-sites/std/components/types.ts";
 
+
+export type IconItem = {
+  icon: AvailableIcons
+}
+ 
 export interface Item {
   label: string;
   href: string;
@@ -14,9 +21,10 @@ export interface NavItem {
     infos: string[];
     bandeira: string;
     nationality: string;
-    icons?: string[];
+    icons?: IconItem[];
     infos2?: { label: string, href: string };
     contacts?: { label: string, sac: number; href: string };
+    juridico?:{label:string, href: string};
     nomeEmpresa?: string;
     
 }
@@ -26,11 +34,11 @@ export interface Props {
   navItems?: NavItem[];
 }
 
-function Footer({ sections, navItems = [] }: Props) {
+function Footer({ sections, navItems = [],}: Props) {
   return (
     <footer class="w-full">
-      <div class="mx-auto max-w-7xl px-4">
-        <div class="flex">
+      <div class="mx-auto max-w-7xl px-4 border-b-2 border-black">
+        <div class="flex mb-[40px]">
           {sections &&
             sections.map((section) => (
               <div key={section.label} class="w-full px-4 ">
@@ -48,7 +56,6 @@ function Footer({ sections, navItems = [] }: Props) {
               </div>
             ))}
         </div>
-        <div class="border-b-2 border-black mt-[32px]"></div>
       </div>
       <div class="mx-auto max-w-7xl">
           <NavBarFooter items={navItems} />

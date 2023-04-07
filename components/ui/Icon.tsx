@@ -35,14 +35,16 @@ export type AvailableIcons =
   | "FilterList"
   | "WhatsApp";
 
+
 interface Props extends JSX.SVGAttributes<SVGSVGElement> {
   /**
    * Symbol id from element to render. Take a look at `/static/icons.svg`.
    *
    * Example: <Icon id="Bell" />
    */
-  id: AvailableIcons;
+  id?: AvailableIcons | string;
   size?: number;
+  color?: string;
 }
 
 function Icon(

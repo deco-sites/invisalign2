@@ -258,11 +258,17 @@ const manifest: DecoManifest = {
                       "title": "Legend1",
                     },
                     "legend2": {
-                      "type": "string",
+                      "type": [
+                        "string",
+                        "null",
+                      ],
                       "title": "Legend2",
                     },
                     "subTitle": {
-                      "type": "string",
+                      "type": [
+                        "string",
+                        "null",
+                      ],
                       "title": "Sub Title",
                     },
                     "label": {
@@ -274,8 +280,6 @@ const manifest: DecoManifest = {
                     "href",
                     "title",
                     "legend1",
-                    "legend2",
-                    "subTitle",
                     "label",
                   ],
                 },
@@ -384,7 +388,147 @@ const manifest: DecoManifest = {
                 "icons": {
                   "type": "array",
                   "items": {
-                    "type": "string",
+                    "title": "IconItem",
+                    "type": "object",
+                    "properties": {
+                      "icon": {
+                        "type": "string",
+                        "anyOf": [
+                          {
+                            "type": "string",
+                            "const": "ChevronLeft",
+                          },
+                          {
+                            "type": "string",
+                            "const": "ChevronRight",
+                          },
+                          {
+                            "type": "string",
+                            "const": "ChevronUp",
+                          },
+                          {
+                            "type": "string",
+                            "const": "ChevronDown",
+                          },
+                          {
+                            "type": "string",
+                            "const": "QuestionMarkCircle",
+                          },
+                          {
+                            "type": "string",
+                            "const": "User",
+                          },
+                          {
+                            "type": "string",
+                            "const": "ShoppingCart",
+                          },
+                          {
+                            "type": "string",
+                            "const": "Bars3",
+                          },
+                          {
+                            "type": "string",
+                            "const": "Heart",
+                          },
+                          {
+                            "type": "string",
+                            "const": "MagnifyingGlass",
+                          },
+                          {
+                            "type": "string",
+                            "const": "XMark",
+                          },
+                          {
+                            "type": "string",
+                            "const": "Plus",
+                          },
+                          {
+                            "type": "string",
+                            "const": "Minus",
+                          },
+                          {
+                            "type": "string",
+                            "const": "MapPin",
+                          },
+                          {
+                            "type": "string",
+                            "const": "Phone",
+                          },
+                          {
+                            "type": "string",
+                            "const": "Elo",
+                          },
+                          {
+                            "type": "string",
+                            "const": "Mastercard",
+                          },
+                          {
+                            "type": "string",
+                            "const": "Visa",
+                          },
+                          {
+                            "type": "string",
+                            "const": "Pix",
+                          },
+                          {
+                            "type": "string",
+                            "const": "Logo",
+                          },
+                          {
+                            "type": "string",
+                            "const": "Facebook",
+                          },
+                          {
+                            "type": "string",
+                            "const": "Instagram",
+                          },
+                          {
+                            "type": "string",
+                            "const": "Tiktok",
+                          },
+                          {
+                            "type": "string",
+                            "const": "Truck",
+                          },
+                          {
+                            "type": "string",
+                            "const": "Discount",
+                          },
+                          {
+                            "type": "string",
+                            "const": "Return",
+                          },
+                          {
+                            "type": "string",
+                            "const": "CreditCard",
+                          },
+                          {
+                            "type": "string",
+                            "const": "Deco",
+                          },
+                          {
+                            "type": "string",
+                            "const": "Discord",
+                          },
+                          {
+                            "type": "string",
+                            "const": "Trash",
+                          },
+                          {
+                            "type": "string",
+                            "const": "FilterList",
+                          },
+                          {
+                            "type": "string",
+                            "const": "WhatsApp",
+                          },
+                        ],
+                        "title": "Icon",
+                      },
+                    },
+                    "required": [
+                      "icon",
+                    ],
                   },
                   "title": "Icons",
                 },
@@ -429,6 +573,24 @@ const manifest: DecoManifest = {
                     "href",
                   ],
                 },
+                "juridico": {
+                  "title": "Juridico",
+                  "type": "object",
+                  "properties": {
+                    "label": {
+                      "type": "string",
+                      "title": "Label",
+                    },
+                    "href": {
+                      "type": "string",
+                      "title": "Href",
+                    },
+                  },
+                  "required": [
+                    "label",
+                    "href",
+                  ],
+                },
                 "nomeEmpresa": {
                   "type": [
                     "string",
@@ -457,8 +619,8 @@ const manifest: DecoManifest = {
         "title": " Header",
         "type": "object",
         "properties": {
-          "image": {
-            "title": "Image",
+          "logo": {
+            "title": "Logo",
             "type": "object",
             "properties": {
               "src": {
@@ -486,6 +648,13 @@ const manifest: DecoManifest = {
               "width",
               "height",
             ],
+          },
+          "infos": {
+            "type": "array",
+            "items": {
+              "type": "string",
+            },
+            "title": "Infos",
           },
           "navItems": {
             "type": "array",
@@ -515,52 +684,12 @@ const manifest: DecoManifest = {
                         "type": "string",
                         "title": "Href",
                       },
-                      "children": {
-                        "title": "Children",
-                        "type": "array",
-                        "items": {
-                          "type": "object",
-                          "properties": {
-                            "label": {
-                              "type": "string",
-                              "title": "Label",
-                            },
-                            "href": {
-                              "type": "string",
-                              "title": "Href",
-                            },
-                          },
-                          "required": [
-                            "label",
-                            "href",
-                          ],
-                        },
-                      },
                     },
                     "required": [
                       "label",
                       "href",
                     ],
                   },
-                },
-                "image": {
-                  "title": "Image",
-                  "type": "object",
-                  "properties": {
-                    "src": {
-                      "format": "image-uri",
-                      "type": "string",
-                      "title": "Src",
-                    },
-                    "alt": {
-                      "type": [
-                        "string",
-                        "null",
-                      ],
-                      "title": "Alt",
-                    },
-                  },
-                  "required": [],
                 },
               },
               "required": [

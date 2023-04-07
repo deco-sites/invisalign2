@@ -14,24 +14,18 @@ export interface NavItem {
   children?: Array<{
     label: string;
     href: string;
-    children?: Array<{
-      label: string;
-      href: string;
-    }>;
   }>;
-  image?: {
-    src?: Image;
-    alt?: string;
-  };
+  
 }
 
 export interface Props {
-  image?: {
+  logo?: {
     src?: Image,
     alt?:string,
     width: number,
     height: number
   };
+  infos?: string[]
   navItems?: NavItem[];
   products?: LoaderReturnType<Product[] | null>;
   suggestions?: LoaderReturnType<Suggestion | null>;
@@ -44,19 +38,19 @@ function Header(
     navItems = [],
     suggestions,
     configVTEX,
-    image
+    logo,
+    infos = []
   }: Props,
 ) {
   return (
-    <header class={`h-[${headerHeight}]`}>
-      <div class="bg-default fixed w-full z-50">
-        <Logo image={image}/>
+    <header className={`h-[${headerHeight}]` }>
+      <div className={`bg-default w-full`}>
+        <Logo logo={logo} infos={infos}/>
         <Navbar items={navItems} />
       </div>
 
       <Modals
         menu={{ items: navItems }}
-      
       />
     </header>
   );

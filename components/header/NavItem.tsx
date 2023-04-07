@@ -12,23 +12,18 @@ function NavItem({ item }: { item: INavItem }) {
   return (
     <li class="group flex items-center relative">
     <a href={href} class="px-4 py-3">
-      <Text
-        class="group-hover:border-black border-solid border-b border-white"
-        variant="menu"
-      >
-        {label}
-      </Text>
+      <span class="font-bold">{label}</span>
     </a>
   
     {children && children.length > 0 &&
       (
         <div
-          class={`absolute invisible hover:visible group-hover:visible bg-default z-50 flex flex-col gap-6 border-t-1 border-b-2 border-default w-[20vw]`}
+          class={`absolute invisible hover:visible group-hover:visible bg-default z-50 border-b-4 border-blue-400 flex flex-col gap-6 w-[15vw] rounded-b-[5px]`}
           style={{ top: "100%", left: "0px" }}
         >
           <ul class="flex flex-col">
             {children.map((node) => (
-              <li>
+              <li class="pl-[5px]">
                 <a class="hover:bg-gray-200" href={node.href}>
                   <Text variant="menu">{node.label}</Text>
                 </a>
