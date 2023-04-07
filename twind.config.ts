@@ -41,7 +41,7 @@ const options: Omit<Options, "selfURL"> = {
         "blue" :"#005BCA",
         "strong-blue": "#0067ac",
         "light-blue": "#1d93dd",
-        "blue-title": "#009ace;",
+        "blue-title": "#009ace",
         "green-home": "#C4D600",
         "dark": "rgba(16, 5, 11, 0.95)",
         "pink": "#CF006F",

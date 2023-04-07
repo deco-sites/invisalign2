@@ -2,7 +2,7 @@ import { useEffect } from "preact/hooks";
 
 interface Props {
   rootId: string;
-  behavior?: "smooth" | "auto";
+  behavior?: "auto";
   interval?: number;
 }
 
@@ -167,7 +167,7 @@ const setup = ({ rootId, behavior, interval }: Props) => {
   };
 };
 
-function Slider({ rootId, behavior = "smooth", interval }: Props) {
+function Slider({ rootId, behavior = "auto", interval }: Props) {
   useEffect(() => setup({ rootId, behavior, interval }), [
     rootId,
     behavior,

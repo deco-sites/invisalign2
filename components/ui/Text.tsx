@@ -7,8 +7,8 @@ type Props = JSX.IntrinsicElements["span"] & {
     | "default-title"
     | "default-inverse"
     | "subdued"
-    | "subdued-inverse"
-    | "price"
+    | "black"
+    | "blue"
     | "section-title"
     | "positive"
     | "critical";

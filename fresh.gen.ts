@@ -20,15 +20,16 @@ import * as $$$3 from "./sections/DesignSystem.story.tsx";
 import * as $$$4 from "./sections/Footer.tsx";
 import * as $$$5 from "./sections/Header.tsx";
 import * as $$$6 from "./sections/LinkTree.tsx";
-import * as $$$7 from "./sections/Warnings.tsx";
-import * as $$$8 from "./sections/WhatsApp.tsx";
-import * as $$$9 from "deco-sites/std/sections/SEO.tsx";
-import * as $$$10 from "deco-sites/std/sections/SEOPDP.tsx";
-import * as $$$11 from "deco-sites/std/sections/SEOPLP.tsx";
-import * as $$$12 from "deco-sites/std/sections/configOCC.global.tsx";
-import * as $$$13 from "deco-sites/std/sections/configShopify.global.tsx";
-import * as $$$14 from "deco-sites/std/sections/configVTEX.global.tsx";
-import * as $$$15 from "deco-sites/std/sections/configYourViews.tsx";
+import * as $$$7 from "./sections/SliderHome.tsx";
+import * as $$$8 from "./sections/Warnings.tsx";
+import * as $$$9 from "./sections/WhatsApp.tsx";
+import * as $$$10 from "deco-sites/std/sections/SEO.tsx";
+import * as $$$11 from "deco-sites/std/sections/SEOPDP.tsx";
+import * as $$$12 from "deco-sites/std/sections/SEOPLP.tsx";
+import * as $$$13 from "deco-sites/std/sections/configOCC.global.tsx";
+import * as $$$14 from "deco-sites/std/sections/configShopify.global.tsx";
+import * as $$$15 from "deco-sites/std/sections/configVTEX.global.tsx";
+import * as $$$16 from "deco-sites/std/sections/configYourViews.tsx";
 import * as $$$$0 from "$live/functions/EffectSelectPage.ts";
 import * as $$$$1 from "$live/functions/MatchDate.ts";
 import * as $$$$2 from "$live/functions/MatchEnvironment.ts";
@@ -70,15 +71,16 @@ const manifest: DecoManifest = {
     "./sections/Footer.tsx": $$$4,
     "./sections/Header.tsx": $$$5,
     "./sections/LinkTree.tsx": $$$6,
-    "./sections/Warnings.tsx": $$$7,
-    "./sections/WhatsApp.tsx": $$$8,
-    "deco-sites/std/sections/SEO.tsx": $$$9,
-    "deco-sites/std/sections/SEOPDP.tsx": $$$10,
-    "deco-sites/std/sections/SEOPLP.tsx": $$$11,
-    "deco-sites/std/sections/configOCC.global.tsx": $$$12,
-    "deco-sites/std/sections/configShopify.global.tsx": $$$13,
-    "deco-sites/std/sections/configVTEX.global.tsx": $$$14,
-    "deco-sites/std/sections/configYourViews.tsx": $$$15,
+    "./sections/SliderHome.tsx": $$$7,
+    "./sections/Warnings.tsx": $$$8,
+    "./sections/WhatsApp.tsx": $$$9,
+    "deco-sites/std/sections/SEO.tsx": $$$10,
+    "deco-sites/std/sections/SEOPDP.tsx": $$$11,
+    "deco-sites/std/sections/SEOPLP.tsx": $$$12,
+    "deco-sites/std/sections/configOCC.global.tsx": $$$13,
+    "deco-sites/std/sections/configShopify.global.tsx": $$$14,
+    "deco-sites/std/sections/configVTEX.global.tsx": $$$15,
+    "deco-sites/std/sections/configYourViews.tsx": $$$16,
   },
   functions: {
     "$live/functions/EffectSelectPage.ts": $$$$0,
@@ -814,6 +816,109 @@ const manifest: DecoManifest = {
               ],
             },
             "title": "Social",
+          },
+        },
+        "required": [],
+      },
+      "outputSchema": null,
+    },
+    "./sections/SliderHome.tsx": {
+      "inputSchema": {
+        "title": " Slider Home",
+        "type": "object",
+        "properties": {
+          "images": {
+            "type": "array",
+            "items": {
+              "title": "Banner",
+              "type": "object",
+              "properties": {
+                "desktop": {
+                  "format": "image-uri",
+                  "type": "string",
+                  "title": "Desktop",
+                },
+                "mobile": {
+                  "format": "image-uri",
+                  "type": "string",
+                  "title": "Mobile",
+                },
+                "alt": {
+                  "type": "string",
+                  "title": "Alt",
+                },
+                "width": {
+                  "type": "number",
+                  "title": "Width",
+                },
+                "height": {
+                  "type": "number",
+                  "title": "Height",
+                },
+                "mensagem": {
+                  "type": [
+                    "string",
+                    "null",
+                  ],
+                  "title": "Mensagem",
+                },
+                "action": {
+                  "title": "Action",
+                  "type": "object",
+                  "properties": {
+                    "href": {
+                      "type": "string",
+                      "title": "Href",
+                    },
+                    "legenda1": {
+                      "type": "string",
+                      "title": "Legenda1",
+                    },
+                    "legenda2": {
+                      "type": "string",
+                      "title": "Legenda2",
+                    },
+                    "legenda3": {
+                      "type": "string",
+                      "title": "Legenda3",
+                    },
+                    "legenda4": {
+                      "type": "string",
+                      "title": "Legenda4",
+                    },
+                  },
+                  "required": [
+                    "href",
+                    "legenda1",
+                    "legenda2",
+                    "legenda3",
+                    "legenda4",
+                  ],
+                },
+              },
+              "required": [
+                "desktop",
+                "mobile",
+                "alt",
+                "width",
+                "height",
+              ],
+            },
+            "title": "Images",
+          },
+          "preload": {
+            "type": [
+              "boolean",
+              "null",
+            ],
+            "title": "Preload",
+          },
+          "interval": {
+            "type": [
+              "number",
+              "null",
+            ],
+            "title": "Interval",
           },
         },
         "required": [],
