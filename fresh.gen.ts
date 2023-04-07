@@ -218,6 +218,16 @@ const manifest: DecoManifest = {
                   "type": "string",
                   "title": "Desktop",
                 },
+                "desktop1": {
+                  "format": "image-uri",
+                  "type": "string",
+                  "title": "Desktop1",
+                },
+                "desktop2": {
+                  "format": "image-uri",
+                  "type": "string",
+                  "title": "Desktop2",
+                },
                 "mobile": {
                   "format": "image-uri",
                   "type": "string",

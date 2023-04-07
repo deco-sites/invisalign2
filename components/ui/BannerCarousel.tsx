@@ -2,10 +2,13 @@ import Text from "$store/components/ui/Text.tsx";
 import Button from "$store/components/ui/Button.tsx";
 import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
+import { useId } from "preact/hooks";
+
 
 export interface Banner {
-  
   desktop: LiveImage;
+  desktop1?: LiveImage;
+  desktop2?: LiveImage;
   mobile: LiveImage;
   alt: string;
   width?: number,
@@ -19,6 +22,7 @@ export interface Banner {
     label: string;
   };
 }
+
 
 export interface Props {
   images?: Banner[];
@@ -275,67 +279,64 @@ function BannerCarouselDif({ image, lcp }: { image: Banner; lcp?: boolean }) {
     desktop,
     action,
     width = 800, 
-    height =800
+    height =640
   } = image;
 
 return (
-  <>
+<>
   <div class="flex justify-center">
-    <h1>oi</h1>
+    <h1>Mensagem</h1>
   </div>
-  <div class="relative h-screen">
-  <div class="h-full bg-blue-500 w-1/2 absolute left-0 top-0"></div>
-  <div class="h-full bg-red-500 w-1/2 absolute right-0 top-0"></div>
-  <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-    <div class="w-96 h-96 bg-white rounded-lg shadow-lg"></div>
+  <div class="relative h-[580px]">
+    <div class="h-full bg-default w-1/2 absolute left-0 top-0"></div>
+    <div class="h-full bg-blue-title w-1/2 absolute right-0 top-0"></div>
+    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+      <div class="w-[1000px] bg-white rounded-lg shadow-lg px-[10px] py-[10px]">
+        <div class="flex">
+            <Picture preload={lcp} class="w-1/2 h-[400px]">
+              <Source
+                media="(max-width: 767px)"
+                fetchPriority={lcp ? "high" : "auto"}
+                src={mobile}
+                width={360}
+                height={600}
+              />
+              <Source
+                media="(min-width: 768px)"
+                fetchPriority={lcp ? "high" : "auto"}
+                src={desktop}
+                width={width}
+                height={height}
+              />
+              <img 
+                loading={lcp ? "eager" : "lazy"}
+                src={desktop}
+                alt={alt}
+              />
+            </Picture>
+            {action && (
+              <div class="w-1/2 flex flex-col">
+                <Text variant="heading-3">
+                  {action.title}
+                </Text>
+                <Text variant="heading-3">
+                  {action.legend1}
+                </Text>
+                <Text variant="heading-3">
+                  {action.legend2}
+                </Text>
+                <Text variant="heading-3">
+                  {action.subTitle}
+                </Text>
+                <Button variant="secondary">{action.label}</Button>
+              </div>
+            )}
+            </div>
+            <div>botaozin</div>
+      </div>
   </div>
-</div>
-
-
-
-
-    <div class="flex">
-        <Picture preload={lcp} class="w-1/2">
-          <Source
-            media="(max-width: 767px)"
-            fetchPriority={lcp ? "high" : "auto"}
-            src={mobile}
-            width={360}
-            height={600}
-          />
-          <Source
-            media="(min-width: 768px)"
-            fetchPriority={lcp ? "high" : "auto"}
-            src={desktop}
-            width={width}
-            height={height}
-          />
-          <img 
-            loading={lcp ? "eager" : "lazy"}
-            src={desktop}
-            alt={alt}
-          />
-        </Picture>
-        {action && (
-          <div class="w-1/2 flex flex-col">
-            <Text variant="heading-3">
-              {action.title}
-            </Text>
-            <Text variant="heading-3">
-              {action.legend1}
-            </Text>
-            <Text variant="heading-3">
-              {action.legend2}
-            </Text>
-            <Text variant="heading-3">
-              {action.subTitle}
-            </Text>
-            <Button variant="secondary">{action.label}</Button>
-          </div>
-        )}
-        </div>
+</div>    
       </>
-   
   );
 }
 function BannerFullScreen({ image, lcp }: { image: Banner; lcp?: boolean }) {
@@ -398,7 +399,7 @@ return (
 }
 
 
-function BannerCarousel({ images, preload }: Props) {
+function BannerCarousel({ images, preload,}: Props) {
 const styles = [
     { display: 'flex', margin: '45px 0 0 0'},
     { width: '1200px', margin: '75px auto 0', display: 'flex', flexDirection: 'row-reverse', height: '600px'},
