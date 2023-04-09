@@ -5,7 +5,7 @@ import Button from "$store/components/ui/Button.tsx";
 import Slider from "$store/components/ui/Slider.tsx";
 import SliderControllerJS from "$store/islands/SliderJS.tsx";
 import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
-import { useId } from "preact/hooks";
+import { useId, } from "preact/hooks";
 import { animation, keyframes, tw } from "twind/css";
 
 export interface Banner {
@@ -14,7 +14,6 @@ export interface Banner {
     alt: string;
     width: number;
     height: number;
-    mensagem?: string;
     action?: {
       href: string;
       legenda1: string;
@@ -27,24 +26,21 @@ export interface Props {
     images?: Banner[];
     preload?: boolean;
     interval?: number;
+    mensagem?: string;
 }
 
-function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
+function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }, ) {
     const {
       alt,
       mobile,
       desktop,
-      mensagem,
-      width = 400,
-      height = 400,
+      width = 570,
+      height = 402,
       action,
     } = image;
   
     return (
     <>
-    <div class="flex">
-        <div class="mx-auto text-light-blue">{mensagem}</div>
-    </div>
     <div class="h-[600px]" style={{backgroundImage: 'linear-gradient(to right, #ffffff 50%, rgb(7, 143, 255) 50%)'}}>
             <div class="h-[400px] min-w-[100vw] flex justify-center items-center flex-row-reverse mt-[20px]">
                 <div class="mt-[200px] mr-[200px]">
@@ -60,8 +56,8 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
                     media="(min-width: 768px)"
                     fetchPriority={lcp ? "high" : "auto"}
                     src={desktop}
-                    width={400}
-                    height={400}
+                    width={570}
+                    height={402}
                     />
                     <img
                     class="object-cover sm:h-full"
@@ -114,7 +110,7 @@ function Dots({ images, interval = 0 }: Props) {
           }}
         >
         </style>
-        <ol class="flex items-center justify-end col-span-full gap-4 z-10 row-start-4">
+        <ol class="flex items-center justify-end col-span-full gap-4 z-10 row-start-4 absolute bottom-[35px] right-0 mr-[420px]">
           {images?.map((_, index) => (
             <li class="h-full">
               <button
@@ -125,7 +121,7 @@ function Dots({ images, interval = 0 }: Props) {
                 <div
                   class={tw`group-disabled:${
                     animation(
-                      `${interval}s ease-out 1 forwards`,
+                      `${interval *0}s ease-out 1 forwards`,
                       keyframes`
                         from: {
                           --dot-progress: 0%;
@@ -135,10 +131,10 @@ function Dots({ images, interval = 0 }: Props) {
                         }
                       `,
                     )
-                  } rounded-full w-8 h-8 mr-2`}
+                  } rounded-full w-4 h-4 mr-2`}
                   style={{
                     background:
-                      "linear-gradient(to right, #dd1313 var(--dot-progress), rgba(0, 0, 0, 0.4) var(--dot-progress))",
+                      "linear-gradient(to right, #CF006F var(--dot-progress), rgba(0, 0, 0, 0.4) var(--dot-progress))",
                   }}
                 />
               </button>
@@ -147,14 +143,18 @@ function Dots({ images, interval = 0 }: Props) {
         </ol>
       </>
     );
-  }
-function SliderHome({ images, preload, interval }: Props) {
+}
+function SliderHome({ images, preload, interval, mensagem }: Props) {
     const id = useId();
   
     return (
+      <>
+      <div class="flex">
+        <div class="mx-auto text-light-blue">{mensagem}</div>
+      </div>
       <div
         id={id}
-        class="grid grid-cols-[48px_1fr_48px] sm:grid-cols-[120px_1fr_120px] grid-rows-[1fr_48px_1fr_48px]"
+        class="grid grid-cols-[48px_1fr_48px] sm:grid-cols-[120px_1fr_120px] grid-rows-[1fr_48px_1fr_48px] relative"
       >
         <Slider class="col-span-full row-span-full scrollbar-none gap-6">
           {images?.map((image, index) => (
@@ -162,10 +162,11 @@ function SliderHome({ images, preload, interval }: Props) {
           ))}
         </Slider>
 
-        <Dots images={images} interval={interval} />
+        <Dots images={images} interval={interval}/>
   
         <SliderControllerJS rootId={id} interval={interval && interval * 1e3} />
       </div>
+      </>
     );
   }
 

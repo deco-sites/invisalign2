@@ -20,16 +20,17 @@ import * as $$$3 from "./sections/DesignSystem.story.tsx";
 import * as $$$4 from "./sections/Footer.tsx";
 import * as $$$5 from "./sections/Header.tsx";
 import * as $$$6 from "./sections/LinkTree.tsx";
-import * as $$$7 from "./sections/SliderHome.tsx";
-import * as $$$8 from "./sections/Warnings.tsx";
-import * as $$$9 from "./sections/WhatsApp.tsx";
-import * as $$$10 from "deco-sites/std/sections/SEO.tsx";
-import * as $$$11 from "deco-sites/std/sections/SEOPDP.tsx";
-import * as $$$12 from "deco-sites/std/sections/SEOPLP.tsx";
-import * as $$$13 from "deco-sites/std/sections/configOCC.global.tsx";
-import * as $$$14 from "deco-sites/std/sections/configShopify.global.tsx";
-import * as $$$15 from "deco-sites/std/sections/configVTEX.global.tsx";
-import * as $$$16 from "deco-sites/std/sections/configYourViews.tsx";
+import * as $$$7 from "./sections/MoreCards.tsx";
+import * as $$$8 from "./sections/SliderHome.tsx";
+import * as $$$9 from "./sections/Warnings.tsx";
+import * as $$$10 from "./sections/WhatsApp.tsx";
+import * as $$$11 from "deco-sites/std/sections/SEO.tsx";
+import * as $$$12 from "deco-sites/std/sections/SEOPDP.tsx";
+import * as $$$13 from "deco-sites/std/sections/SEOPLP.tsx";
+import * as $$$14 from "deco-sites/std/sections/configOCC.global.tsx";
+import * as $$$15 from "deco-sites/std/sections/configShopify.global.tsx";
+import * as $$$16 from "deco-sites/std/sections/configVTEX.global.tsx";
+import * as $$$17 from "deco-sites/std/sections/configYourViews.tsx";
 import * as $$$$0 from "$live/functions/EffectSelectPage.ts";
 import * as $$$$1 from "$live/functions/MatchDate.ts";
 import * as $$$$2 from "$live/functions/MatchEnvironment.ts";
@@ -71,16 +72,17 @@ const manifest: DecoManifest = {
     "./sections/Footer.tsx": $$$4,
     "./sections/Header.tsx": $$$5,
     "./sections/LinkTree.tsx": $$$6,
-    "./sections/SliderHome.tsx": $$$7,
-    "./sections/Warnings.tsx": $$$8,
-    "./sections/WhatsApp.tsx": $$$9,
-    "deco-sites/std/sections/SEO.tsx": $$$10,
-    "deco-sites/std/sections/SEOPDP.tsx": $$$11,
-    "deco-sites/std/sections/SEOPLP.tsx": $$$12,
-    "deco-sites/std/sections/configOCC.global.tsx": $$$13,
-    "deco-sites/std/sections/configShopify.global.tsx": $$$14,
-    "deco-sites/std/sections/configVTEX.global.tsx": $$$15,
-    "deco-sites/std/sections/configYourViews.tsx": $$$16,
+    "./sections/MoreCards.tsx": $$$7,
+    "./sections/SliderHome.tsx": $$$8,
+    "./sections/Warnings.tsx": $$$9,
+    "./sections/WhatsApp.tsx": $$$10,
+    "deco-sites/std/sections/SEO.tsx": $$$11,
+    "deco-sites/std/sections/SEOPDP.tsx": $$$12,
+    "deco-sites/std/sections/SEOPLP.tsx": $$$13,
+    "deco-sites/std/sections/configOCC.global.tsx": $$$14,
+    "deco-sites/std/sections/configShopify.global.tsx": $$$15,
+    "deco-sites/std/sections/configVTEX.global.tsx": $$$16,
+    "deco-sites/std/sections/configYourViews.tsx": $$$17,
   },
   functions: {
     "$live/functions/EffectSelectPage.ts": $$$$0,
@@ -219,16 +221,6 @@ const manifest: DecoManifest = {
                   "format": "image-uri",
                   "type": "string",
                   "title": "Desktop",
-                },
-                "desktop1": {
-                  "format": "image-uri",
-                  "type": "string",
-                  "title": "Desktop1",
-                },
-                "desktop2": {
-                  "format": "image-uri",
-                  "type": "string",
-                  "title": "Desktop2",
                 },
                 "mobile": {
                   "format": "image-uri",
@@ -822,6 +814,157 @@ const manifest: DecoManifest = {
       },
       "outputSchema": null,
     },
+    "./sections/MoreCards.tsx": {
+      "inputSchema": {
+        "title": " More Cards",
+        "type": "object",
+        "properties": {
+          "images": {
+            "type": "array",
+            "items": {
+              "title": "Banner",
+              "type": "object",
+              "properties": {
+                "desktop": {
+                  "format": "image-uri",
+                  "type": "string",
+                  "title": "Desktop",
+                },
+                "mobile": {
+                  "format": "image-uri",
+                  "type": "string",
+                  "title": "Mobile",
+                },
+                "alt": {
+                  "type": "string",
+                  "title": "Alt",
+                },
+                "width": {
+                  "type": [
+                    "number",
+                    "null",
+                  ],
+                  "title": "Width",
+                },
+                "height": {
+                  "type": [
+                    "number",
+                    "null",
+                  ],
+                  "title": "Height",
+                },
+                "action": {
+                  "title": "Action",
+                  "type": "object",
+                  "properties": {
+                    "href": {
+                      "type": "string",
+                      "title": "Href",
+                    },
+                    "title": {
+                      "type": "string",
+                      "title": "Title",
+                    },
+                    "legend1": {
+                      "type": "string",
+                      "title": "Legend1",
+                    },
+                    "legend2": {
+                      "type": [
+                        "string",
+                        "null",
+                      ],
+                      "title": "Legend2",
+                    },
+                    "subTitle": {
+                      "type": [
+                        "string",
+                        "null",
+                      ],
+                      "title": "Sub Title",
+                    },
+                    "label": {
+                      "type": "string",
+                      "title": "Label",
+                    },
+                  },
+                  "required": [
+                    "href",
+                    "title",
+                    "legend1",
+                    "label",
+                  ],
+                },
+              },
+              "required": [
+                "desktop",
+                "mobile",
+                "alt",
+              ],
+            },
+            "title": "Images",
+          },
+          "preload": {
+            "type": [
+              "boolean",
+              "null",
+            ],
+            "title": "Preload",
+          },
+          "mensagem1": {
+            "title": "Mensagem1",
+            "type": "object",
+            "properties": {
+              "titulo1": {
+                "type": [
+                  "string",
+                  "null",
+                ],
+                "title": "Titulo1",
+              },
+              "conectLink": {
+                "type": [
+                  "string",
+                  "null",
+                ],
+                "title": "Conect Link",
+              },
+              "href": {
+                "type": [
+                  "string",
+                  "null",
+                ],
+                "title": "Href",
+              },
+              "titulo2": {
+                "type": [
+                  "string",
+                  "null",
+                ],
+                "title": "Titulo2",
+              },
+              "label2": {
+                "type": [
+                  "string",
+                  "null",
+                ],
+                "title": "Label2",
+              },
+              "href2": {
+                "type": [
+                  "string",
+                  "null",
+                ],
+                "title": "Href2",
+              },
+            },
+            "required": [],
+          },
+        },
+        "required": [],
+      },
+      "outputSchema": null,
+    },
     "./sections/SliderHome.tsx": {
       "inputSchema": {
         "title": " Slider Home",
@@ -854,13 +997,6 @@ const manifest: DecoManifest = {
                 "height": {
                   "type": "number",
                   "title": "Height",
-                },
-                "mensagem": {
-                  "type": [
-                    "string",
-                    "null",
-                  ],
-                  "title": "Mensagem",
                 },
                 "action": {
                   "title": "Action",
@@ -919,6 +1055,13 @@ const manifest: DecoManifest = {
               "null",
             ],
             "title": "Interval",
+          },
+          "mensagem": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Mensagem",
           },
         },
         "required": [],

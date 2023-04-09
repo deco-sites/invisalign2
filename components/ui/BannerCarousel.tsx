@@ -7,8 +7,6 @@ import { useId } from "preact/hooks";
 
 export interface Banner {
   desktop: LiveImage;
-  desktop1?: LiveImage;
-  desktop2?: LiveImage;
   mobile: LiveImage;
   alt: string;
   width?: number,
@@ -147,7 +145,6 @@ return (
           </div>
         )}
       </>
-   
   );
 }
 function BannerProduct({ image, lcp }: { image: Banner; lcp?: boolean }) {
@@ -282,7 +279,10 @@ const styles = [
     { width: '1200px', margin: '75px auto 0', display: 'flex', flexDirection: 'row-reverse', height: '600px'},
     { width: '1200px', height: '600px', margin: '0 auto' },
     { width: '1200px', margin: '0 auto',},
-
+    { width: '1200px', height: '600px', margin: '0 auto' },
+    { width: '1200px', height: '600px', margin: '0 auto' },
+    { width: '1200px', height: '600px', margin: '0 auto' },
+    { width: '1200px', height: '600px', margin: '0 auto' },
 ];
     return (
       <div>
@@ -297,7 +297,7 @@ const styles = [
       )  : index === 3 ?(
         <BannerProduct2 image={image} lcp={index===3 && preload} />
       ) : (
-        <BannerProduct image={image} lcp={index === 6 && preload} />
+        <BannerProduct image={image} lcp={index === 4 && preload} />
       )}
     </div>
   ))}
