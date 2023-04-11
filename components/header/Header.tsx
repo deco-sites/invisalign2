@@ -43,7 +43,7 @@ function Header(
   }: Props,
 ) {
   return (
-    <header className={`h-[${headerHeight}]` }>
+    <header className={`h-[${headerHeight}]`}>
       <div className={`bg-default w-full`}>
         <Logo logo={logo} infos={infos}/>
         <Navbar items={navItems} />

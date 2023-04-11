@@ -191,7 +191,7 @@ function BannerProduct2({ image, lcp }: { image: Banner; lcp?: boolean }) {
                   </div>
                 )}
                  </div>
-              <div class="h-64 w-64 bg-pink-title absolute z-0 bottom-0 left-0 "></div>
+              <div class="h-64 w-64 bg-pink-title absolute z-0 bottom-0 left-0"></div>
               <div class="h-64 w-64 bg-pink-title absolute z-0 top-0 right-0"></div>
             </div>
         </div>

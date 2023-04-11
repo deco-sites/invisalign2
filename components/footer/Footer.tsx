@@ -57,7 +57,7 @@ function Footer({ sections, navItems = [],}: Props) {
             ))}
         </div>
       </div>
-      <div class="mx-auto max-w-7xl">
+      <div class="mx-auto max-w-7xl pb-[55px]">
           <NavBarFooter items={navItems} />
       </div>
     </footer>

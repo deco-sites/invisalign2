@@ -284,7 +284,7 @@ const styles = [
     { width: '1200px', height: '600px', margin: '0 auto' },
     { width: '1200px', height: '600px', margin: '0 auto' },
 ];
-    return (
+return (
       <div>
   {images?.map((image, index) => (
     <div style={styles[index]}>
@@ -302,8 +302,7 @@ const styles = [
     </div>
   ))}
   </div>
-    
-  );
+);
 }
 
 export default BannerCarousel;

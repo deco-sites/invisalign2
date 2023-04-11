@@ -12,25 +12,29 @@ import * as $3 from "./routes/api/[...catchall].tsx";
 import * as $4 from "./routes/index.tsx";
 import * as $$0 from "./islands/HeaderButton.tsx";
 import * as $$1 from "./islands/HeaderModals.tsx";
-import * as $$2 from "./islands/SliderJS.tsx";
+import * as $$2 from "./islands/ImageTitleSwitcher.tsx";
+import * as $$3 from "./islands/SliderJS.tsx";
 import * as $$$0 from "./sections/BannerGrid.tsx";
 import * as $$$1 from "./sections/Carousel.tsx";
-import * as $$$2 from "./sections/CookieConsent.tsx";
-import * as $$$3 from "./sections/DesignSystem.story.tsx";
-import * as $$$4 from "./sections/Footer.tsx";
-import * as $$$5 from "./sections/Header.tsx";
-import * as $$$6 from "./sections/LinkTree.tsx";
-import * as $$$7 from "./sections/MoreCards.tsx";
-import * as $$$8 from "./sections/SliderHome.tsx";
-import * as $$$9 from "./sections/Warnings.tsx";
-import * as $$$10 from "./sections/WhatsApp.tsx";
-import * as $$$11 from "deco-sites/std/sections/SEO.tsx";
-import * as $$$12 from "deco-sites/std/sections/SEOPDP.tsx";
-import * as $$$13 from "deco-sites/std/sections/SEOPLP.tsx";
-import * as $$$14 from "deco-sites/std/sections/configOCC.global.tsx";
-import * as $$$15 from "deco-sites/std/sections/configShopify.global.tsx";
-import * as $$$16 from "deco-sites/std/sections/configVTEX.global.tsx";
-import * as $$$17 from "deco-sites/std/sections/configYourViews.tsx";
+import * as $$$2 from "./sections/Contencoes.tsx";
+import * as $$$3 from "./sections/CookieConsent.tsx";
+import * as $$$4 from "./sections/DesignSystem.story.tsx";
+import * as $$$5 from "./sections/Footer.tsx";
+import * as $$$6 from "./sections/FormUserType.tsx";
+import * as $$$7 from "./sections/Header.tsx";
+import * as $$$8 from "./sections/LinkTree.tsx";
+import * as $$$9 from "./sections/Mensagem.tsx";
+import * as $$$10 from "./sections/MoreCards.tsx";
+import * as $$$11 from "./sections/SliderHome.tsx";
+import * as $$$12 from "./sections/Warnings.tsx";
+import * as $$$13 from "./sections/WhatsApp.tsx";
+import * as $$$14 from "deco-sites/std/sections/SEO.tsx";
+import * as $$$15 from "deco-sites/std/sections/SEOPDP.tsx";
+import * as $$$16 from "deco-sites/std/sections/SEOPLP.tsx";
+import * as $$$17 from "deco-sites/std/sections/configOCC.global.tsx";
+import * as $$$18 from "deco-sites/std/sections/configShopify.global.tsx";
+import * as $$$19 from "deco-sites/std/sections/configVTEX.global.tsx";
+import * as $$$20 from "deco-sites/std/sections/configYourViews.tsx";
 import * as $$$$0 from "$live/functions/EffectSelectPage.ts";
 import * as $$$$1 from "$live/functions/MatchDate.ts";
 import * as $$$$2 from "$live/functions/MatchEnvironment.ts";
@@ -62,27 +66,31 @@ const manifest: DecoManifest = {
   islands: {
     "./islands/HeaderButton.tsx": $$0,
     "./islands/HeaderModals.tsx": $$1,
-    "./islands/SliderJS.tsx": $$2,
+    "./islands/ImageTitleSwitcher.tsx": $$2,
+    "./islands/SliderJS.tsx": $$3,
   },
   sections: {
     "./sections/BannerGrid.tsx": $$$0,
     "./sections/Carousel.tsx": $$$1,
-    "./sections/CookieConsent.tsx": $$$2,
-    "./sections/DesignSystem.story.tsx": $$$3,
-    "./sections/Footer.tsx": $$$4,
-    "./sections/Header.tsx": $$$5,
-    "./sections/LinkTree.tsx": $$$6,
-    "./sections/MoreCards.tsx": $$$7,
-    "./sections/SliderHome.tsx": $$$8,
-    "./sections/Warnings.tsx": $$$9,
-    "./sections/WhatsApp.tsx": $$$10,
-    "deco-sites/std/sections/SEO.tsx": $$$11,
-    "deco-sites/std/sections/SEOPDP.tsx": $$$12,
-    "deco-sites/std/sections/SEOPLP.tsx": $$$13,
-    "deco-sites/std/sections/configOCC.global.tsx": $$$14,
-    "deco-sites/std/sections/configShopify.global.tsx": $$$15,
-    "deco-sites/std/sections/configVTEX.global.tsx": $$$16,
-    "deco-sites/std/sections/configYourViews.tsx": $$$17,
+    "./sections/Contencoes.tsx": $$$2,
+    "./sections/CookieConsent.tsx": $$$3,
+    "./sections/DesignSystem.story.tsx": $$$4,
+    "./sections/Footer.tsx": $$$5,
+    "./sections/FormUserType.tsx": $$$6,
+    "./sections/Header.tsx": $$$7,
+    "./sections/LinkTree.tsx": $$$8,
+    "./sections/Mensagem.tsx": $$$9,
+    "./sections/MoreCards.tsx": $$$10,
+    "./sections/SliderHome.tsx": $$$11,
+    "./sections/Warnings.tsx": $$$12,
+    "./sections/WhatsApp.tsx": $$$13,
+    "deco-sites/std/sections/SEO.tsx": $$$14,
+    "deco-sites/std/sections/SEOPDP.tsx": $$$15,
+    "deco-sites/std/sections/SEOPLP.tsx": $$$16,
+    "deco-sites/std/sections/configOCC.global.tsx": $$$17,
+    "deco-sites/std/sections/configShopify.global.tsx": $$$18,
+    "deco-sites/std/sections/configVTEX.global.tsx": $$$19,
+    "deco-sites/std/sections/configYourViews.tsx": $$$20,
   },
   functions: {
     "$live/functions/EffectSelectPage.ts": $$$$0,
@@ -285,6 +293,126 @@ const manifest: DecoManifest = {
                     "title",
                     "legend1",
                     "label",
+                  ],
+                },
+              },
+              "required": [
+                "desktop",
+                "mobile",
+                "alt",
+              ],
+            },
+            "title": "Images",
+          },
+          "preload": {
+            "type": [
+              "boolean",
+              "null",
+            ],
+            "title": "Preload",
+          },
+          "interval": {
+            "type": [
+              "number",
+              "null",
+            ],
+            "title": "Interval",
+          },
+        },
+        "required": [],
+      },
+      "outputSchema": null,
+    },
+    "./sections/Contencoes.tsx": {
+      "inputSchema": {
+        "title": " Contencoes",
+        "type": "object",
+        "properties": {
+          "images": {
+            "type": "array",
+            "items": {
+              "title": "Banner",
+              "type": "object",
+              "properties": {
+                "desktop": {
+                  "format": "image-uri",
+                  "type": "string",
+                  "title": "Desktop",
+                },
+                "mobile": {
+                  "format": "image-uri",
+                  "type": "string",
+                  "title": "Mobile",
+                },
+                "alt": {
+                  "type": "string",
+                  "title": "Alt",
+                },
+                "width": {
+                  "type": [
+                    "number",
+                    "null",
+                  ],
+                  "title": "Width",
+                },
+                "height": {
+                  "type": [
+                    "number",
+                    "null",
+                  ],
+                  "title": "Height",
+                },
+                "action": {
+                  "title": "Action",
+                  "type": "object",
+                  "properties": {
+                    "href": {
+                      "type": [
+                        "string",
+                        "null",
+                      ],
+                      "title": "Href",
+                    },
+                    "title": {
+                      "type": "string",
+                      "title": "Title",
+                    },
+                    "legend1": {
+                      "type": "string",
+                      "title": "Legend1",
+                    },
+                    "legend2": {
+                      "type": [
+                        "string",
+                        "null",
+                      ],
+                      "title": "Legend2",
+                    },
+                    "legend3": {
+                      "type": [
+                        "string",
+                        "null",
+                      ],
+                      "title": "Legend3",
+                    },
+                    "subTitle": {
+                      "type": [
+                        "string",
+                        "null",
+                      ],
+                      "title": "Sub Title",
+                    },
+                    "label": {
+                      "type": [
+                        "string",
+                        "null",
+                      ],
+                      "title": "Label",
+                    },
+                  },
+                  "required": [
+                    "title",
+                    "legend1",
                   ],
                 },
               },
@@ -618,6 +746,50 @@ const manifest: DecoManifest = {
       },
       "outputSchema": null,
     },
+    "./sections/FormUserType.tsx": {
+      "inputSchema": {
+        "title": " Form User Type",
+        "type": "object",
+        "properties": {
+          "contentBoxes": {
+            "type": "array",
+            "items": {
+              "title": "BoxProps",
+              "type": "object",
+              "properties": {
+                "imageUrl": {
+                  "type": "string",
+                  "title": "Image Url",
+                },
+                "title": {
+                  "type": "string",
+                  "title": "Title",
+                },
+                "newTitle": {
+                  "type": "string",
+                  "title": "New Title",
+                },
+                "newCaption": {
+                  "type": "string",
+                  "title": "New Caption",
+                },
+              },
+              "required": [
+                "imageUrl",
+                "title",
+                "newTitle",
+                "newCaption",
+              ],
+            },
+            "title": "Content Boxes",
+          },
+        },
+        "required": [
+          "contentBoxes",
+        ],
+      },
+      "outputSchema": null,
+    },
     "./sections/Header.tsx": {
       "inputSchema": {
         "title": " Header",
@@ -811,6 +983,136 @@ const manifest: DecoManifest = {
           },
         },
         "required": [],
+      },
+      "outputSchema": null,
+    },
+    "./sections/Mensagem.tsx": {
+      "inputSchema": {
+        "title": " Mensagem",
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "title": "Title",
+          },
+          "cards": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "image": {
+                  "format": "image-uri",
+                  "type": "string",
+                  "title": "Image",
+                },
+                "title": {
+                  "type": "string",
+                  "title": "Title",
+                },
+                "subtitle": {
+                  "type": "string",
+                  "title": "Subtitle",
+                },
+              },
+              "required": [
+                "image",
+                "title",
+                "subtitle",
+              ],
+            },
+            "title": "Cards",
+          },
+          "images": {
+            "title": "Images",
+            "type": "object",
+            "properties": {
+              "desktop": {
+                "format": "image-uri",
+                "type": "string",
+                "title": "Desktop",
+              },
+              "mobile": {
+                "format": "image-uri",
+                "type": "string",
+                "title": "Mobile",
+              },
+              "alt": {
+                "type": "string",
+                "title": "Alt",
+              },
+              "width": {
+                "type": [
+                  "number",
+                  "null",
+                ],
+                "title": "Width",
+              },
+              "height": {
+                "type": [
+                  "number",
+                  "null",
+                ],
+                "title": "Height",
+              },
+              "action": {
+                "title": "Action",
+                "type": "object",
+                "properties": {
+                  "href": {
+                    "type": [
+                      "string",
+                      "null",
+                    ],
+                    "title": "Href",
+                  },
+                  "title": {
+                    "type": "string",
+                    "title": "Title",
+                  },
+                  "legend1": {
+                    "type": "string",
+                    "title": "Legend1",
+                  },
+                  "legend2": {
+                    "type": [
+                      "string",
+                      "null",
+                    ],
+                    "title": "Legend2",
+                  },
+                  "subTitle": {
+                    "type": [
+                      "string",
+                      "null",
+                    ],
+                    "title": "Sub Title",
+                  },
+                  "label": {
+                    "type": [
+                      "string",
+                      "null",
+                    ],
+                    "title": "Label",
+                  },
+                },
+                "required": [
+                  "title",
+                  "legend1",
+                ],
+              },
+            },
+            "required": [
+              "desktop",
+              "mobile",
+              "alt",
+            ],
+          },
+        },
+        "required": [
+          "title",
+          "cards",
+          "images",
+        ],
       },
       "outputSchema": null,
     },

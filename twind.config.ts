@@ -39,6 +39,7 @@ const options: Omit<Options, "selfURL"> = {
         "default": "#FFFFFF",
         "header": "#FFFFFF",
         "blue" :"#005BCA",
+        "orange": "#FF670D",
         "strong-blue": "#0067ac",
         "light-blue": "#1d93dd",
         "blue-title": "#009ace",
