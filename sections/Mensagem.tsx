@@ -1,7 +1,7 @@
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
 import Button from "$store/components/ui/Button.tsx";
-import { useEffect } from "preact/hooks";
+
 export interface Banner {
     desktop: LiveImage;
     mobile: LiveImage;

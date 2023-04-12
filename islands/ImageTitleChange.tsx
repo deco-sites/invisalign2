@@ -1,18 +1,20 @@
 import { useState } from "preact/hooks";
+import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 
-export type BoxProps = {
-  imageUrl: string;
+type Props = {
+  desktop: LiveImage;
   title: string;
   newTitle: string;
   newCaption: string;
 };
 
 export default function ImageTitleSwitcher({
-  imageUrl,
+  desktop,
   title,
   newTitle,
   newCaption,
-}: BoxProps) {
+  
+}: Props) {
   const [showNew, setShowNew] = useState(false);
   const [showImageTitle, setShowImageTitle] = useState(true);
 
@@ -23,8 +25,8 @@ export default function ImageTitleSwitcher({
 
   return (
     <div
-      className={`w-64 h-64 p-4 border-2 border-gray-300 cursor-pointer ${
-        showNew ? "bg-black" : ""
+      className={`w-[345px] h-[220px] p-4 cursor-pointer flex items-center justify-center ${
+        showNew ? "bg-blue" : ""
       }`}
       onClick={handleClick}
     >
@@ -34,17 +36,17 @@ export default function ImageTitleSwitcher({
         </div>
       )}
       {showImageTitle && (
-        <div className="flex flex-col items-center">
-          <div className="w-32 h-32 rounded-full bg-gray-200 mb-4">
-            <img className="w-full h-full object-cover rounded-full" src={imageUrl} alt="Imagem" />
+        <div className="flex flex-col items-center justify-center">
+          <div className="w-44 h-44">
+            <img src={desktop} class="w-full h-full" />
           </div>
           <p className="text-lg text-gray-500 mb-2">{title}</p>
         </div>
       )}
       {showNew && (
-        <div>
-          <p className="text-lg font-bold mb-2">{newTitle}</p>
-          <p className="text-md text-gray-500">{newCaption}</p>
+        <div class="flex flex-col bg-black h-full w-full items-center pt-[15px]">
+          <p className="text-lg font-bold mb-2 text-default-inverse">{newTitle}</p>
+          <p className="text-md text-default-inverse">{newCaption}</p>
         </div>
       )}
     </div>

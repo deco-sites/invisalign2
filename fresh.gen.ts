@@ -10,10 +10,11 @@ import * as $1 from "./routes/_app.tsx";
 import * as $2 from "./routes/_middleware.ts";
 import * as $3 from "./routes/api/[...catchall].tsx";
 import * as $4 from "./routes/index.tsx";
-import * as $$0 from "./islands/HeaderButton.tsx";
-import * as $$1 from "./islands/HeaderModals.tsx";
-import * as $$2 from "./islands/ImageTitleSwitcher.tsx";
-import * as $$3 from "./islands/SliderJS.tsx";
+import * as $$0 from "./islands/ChangeColor.tsx";
+import * as $$1 from "./islands/HeaderButton.tsx";
+import * as $$2 from "./islands/HeaderModals.tsx";
+import * as $$3 from "./islands/ImageTitleChange.tsx";
+import * as $$4 from "./islands/SliderJS.tsx";
 import * as $$$0 from "./sections/BannerGrid.tsx";
 import * as $$$1 from "./sections/Carousel.tsx";
 import * as $$$2 from "./sections/Contencoes.tsx";
@@ -64,10 +65,11 @@ const manifest: DecoManifest = {
     "./routes/index.tsx": $4,
   },
   islands: {
-    "./islands/HeaderButton.tsx": $$0,
-    "./islands/HeaderModals.tsx": $$1,
-    "./islands/ImageTitleSwitcher.tsx": $$2,
-    "./islands/SliderJS.tsx": $$3,
+    "./islands/ChangeColor.tsx": $$0,
+    "./islands/HeaderButton.tsx": $$1,
+    "./islands/HeaderModals.tsx": $$2,
+    "./islands/ImageTitleChange.tsx": $$3,
+    "./islands/SliderJS.tsx": $$4,
   },
   sections: {
     "./sections/BannerGrid.tsx": $$$0,
@@ -757,9 +759,10 @@ const manifest: DecoManifest = {
               "title": "BoxProps",
               "type": "object",
               "properties": {
-                "imageUrl": {
+                "desktop": {
+                  "format": "image-uri",
                   "type": "string",
-                  "title": "Image Url",
+                  "title": "Desktop",
                 },
                 "title": {
                   "type": "string",
@@ -775,7 +778,7 @@ const manifest: DecoManifest = {
                 },
               },
               "required": [
-                "imageUrl",
+                "desktop",
                 "title",
                 "newTitle",
                 "newCaption",
@@ -783,9 +786,102 @@ const manifest: DecoManifest = {
             },
             "title": "Content Boxes",
           },
+          "legendas": {
+            "type": "array",
+            "items": {
+              "title": "ColorProps",
+              "type": "object",
+              "properties": {
+                "legenda": {
+                  "type": "string",
+                  "title": "Legenda",
+                },
+              },
+              "required": [
+                "legenda",
+              ],
+            },
+            "title": "Legendas",
+          },
+          "mensagem": {
+            "type": "string",
+            "title": "Mensagem",
+          },
+          "descricao": {
+            "type": "string",
+            "title": "Descricao",
+          },
+          "label": {
+            "type": "string",
+            "title": "Label",
+          },
+          "perguntas": {
+            "type": "array",
+            "items": {
+              "title": "FormQuestion",
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "title": "Label",
+                },
+                "opcoes": {
+                  "type": "array",
+                  "items": {
+                    "title": "Item",
+                    "type": "object",
+                    "properties": {
+                      "alternativa": {
+                        "type": "string",
+                        "title": "Alternativa",
+                      },
+                    },
+                    "required": [
+                      "alternativa",
+                    ],
+                  },
+                  "title": "Opcoes",
+                },
+              },
+              "required": [
+                "label",
+                "opcoes",
+              ],
+            },
+            "title": "Perguntas",
+          },
+          "termos": {
+            "title": "Termos",
+            "type": "object",
+            "properties": {
+              "termos": {
+                "type": "string",
+                "title": "Termos",
+              },
+              "link": {
+                "type": "string",
+                "title": "Link",
+              },
+              "href": {
+                "type": "string",
+                "title": "Href",
+              },
+            },
+            "required": [
+              "termos",
+              "link",
+              "href",
+            ],
+          },
         },
         "required": [
           "contentBoxes",
+          "legendas",
+          "mensagem",
+          "descricao",
+          "label",
+          "perguntas",
+          "termos",
         ],
       },
       "outputSchema": null,
