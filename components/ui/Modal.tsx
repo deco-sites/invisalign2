@@ -21,10 +21,11 @@ export type Props = JSX.IntrinsicElements["dialog"] & {
   loading?: "lazy" | "eager";
 };
 
+// aqui provavelmente é a animação pra exibir a barra
 const styles = {
-  "sidebar-right": "animate-slide-left sm:ml-auto",
-  "sidebar-left": "animate-slide-right",
-  center: "",
+  "sidebar-right": "animate-slide-down duration-2 sm:ml-auto",
+  "sidebar-left": "animate-slide-down duration-2",
+  "center": "animate-slide-down duration-2",
 };
 
 const Modal = ({
@@ -66,7 +67,7 @@ const Modal = ({
       onClick={(e) =>
         (e.target as HTMLDialogElement).tagName === "DIALOG" && onClose?.()}
     >
-      <section class="pt-6 h-full bg-default flex flex-col">
+      <section class="pt-6 h-full  bg-default flex flex-col">
         <header class="flex px-4 justify-between items-center pb-6 border-b-1 border-default">
           <h1>
             <Text variant="heading-2">{title}</Text>

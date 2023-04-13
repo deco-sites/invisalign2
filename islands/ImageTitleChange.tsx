@@ -44,7 +44,7 @@ export default function ImageTitleSwitcher({
         </div>
       )}
       {showNew && (
-        <div class="flex flex-col bg-black h-full w-full items-center pt-[15px]">
+        <div class="flex flex-col items-center pt-[15px]">
           <p className="text-lg font-bold mb-2 text-default-inverse">{newTitle}</p>
           <p className="text-md text-default-inverse">{newCaption}</p>
         </div>

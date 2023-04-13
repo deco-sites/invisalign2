@@ -6,7 +6,6 @@ import type { ClientConfigVTEX } from "deco-sites/std/functions/vtexConfig.ts";
 
 import Logo from "./Logo.tsx";
 import Navbar from "./Navbar.tsx";
-import { headerHeight } from "./constants.ts";
 
 export interface NavItem {
   label: string;
@@ -34,24 +33,21 @@ export interface Props {
 
 function Header(
   {
-    products,
     navItems = [],
-    suggestions,
-    configVTEX,
     logo,
     infos = []
   }: Props,
 ) {
   return (
-    <header className={`h-[${headerHeight}]`}>
-      <div className={`bg-default w-full`}>
-        <Logo logo={logo} infos={infos}/>
+    <header className={`h-[120px] md:h-[170px]`}>
+      <div className={`w-full flex flex-row justify-between  p-4 lg:flex-col`}>
+        <Logo logo={logo} infos={infos} navItems={navItems}/>
         <Navbar items={navItems} />
       </div>
-
       <Modals
         menu={{ items: navItems }}
-      />
+      /> 
+
     </header>
   );
 }

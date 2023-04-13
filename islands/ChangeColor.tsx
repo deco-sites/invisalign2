@@ -14,7 +14,7 @@ export default function ChangeColor({
 
   return (
     <span
-      className={`inline-block w-[350px] p-4 border-1 border-blue cursor-pointer ${
+      className={`inline-block w-full p-4 border-1 border-blue cursor-pointer ${
         showColor ? "bg-blue text-white" : ""
       }`}
       onClick={handleClick}

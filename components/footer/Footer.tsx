@@ -37,14 +37,14 @@ export interface Props {
 function Footer({ sections, navItems = [],}: Props) {
   return (
     <footer class="w-full">
-      <div class="mx-auto max-w-7xl px-4 border-b-2 border-black">
-        <div class="flex mb-[40px]">
+      <div class="mx-auto px-4 border-b-2 border-black md:max-w-7xl">
+        <div class="mb-[40px] md:flex ">
           {sections &&
             sections.map((section) => (
-              <div key={section.label} class="w-full px-4 ">
-                <div>
+              <div key={section.label} class="px-4 flex flex-row md:mx-auto md:flex flex-wrap">
+                <div class="">
                 <h4 class="font-bold pb-[18px] text-sm text-titles">{section.label}</h4>
-                  <ol class=""> 
+                  <ol class="hidden md:block"> 
                     {section.subList &&
                       section.subList.map((item) => (
                         <li key={item.href} class="mb-[12px]">
@@ -57,7 +57,7 @@ function Footer({ sections, navItems = [],}: Props) {
             ))}
         </div>
       </div>
-      <div class="mx-auto max-w-7xl pb-[55px]">
+      <div class="mx-auto pb-[55px] md:max-w-7xl">
           <NavBarFooter items={navItems} />
       </div>
     </footer>

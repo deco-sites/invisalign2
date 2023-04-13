@@ -44,16 +44,16 @@ export default function FormUserType({ contentBoxes, mensagem, label, legendas, 
  
   return (
     <>
-    <div class="mt-[120px] w-[1100px] bg-black mx-auto">
+    <div class="max-w-[1100px] md:mt-[10px] mx-auto lg:mt[30px]">
       <form>
         <div class="flex flex-col mb-[20px]">
           <span class="text-light-blue text-[28px] font-medium">{mensagem}</span>
         </div>
-        <div class="w-full mb-[15px]">
+        <div class="mb-[15px]">
           <h1>{label}</h1>
-          <div class="flex mt-[20px] justify-between">
+          <div class="mt-[20px] grid sm:grid-cols-1 sm: gap-[20px] md:grid-cols-3 lg:grid-cols-3">
             {legendas && legendas.map((lgd, index) => (
-              <div class="text-center w-[350px]">
+              <div class="text-center">
                 <ChangeColor legenda={lgd.legenda}/>
               </div>
             ))}
@@ -62,7 +62,7 @@ export default function FormUserType({ contentBoxes, mensagem, label, legendas, 
         <div>
           <span>{descricao}</span>
         </div>
-          <div class="mt-[5px] grid grid-cols-1 md:grid-cols-2 md:gap-[5px] lg:grid-cols-3 gap-[32px]  w-[1100px]">
+          <div class="mt-[5px] grid sm-grid-cols-1 gap-[10px] justify-items-center md:grid-cols-2 lg:grid-cols-3">
             {contentBoxes.map((box, index) => (
               <div key={index} onClick={() => handleBoxClick(index)} class="w-[345px] h-[220px] border-1 border-blue">
                 <ImageTitleChange
@@ -96,13 +96,13 @@ export default function FormUserType({ contentBoxes, mensagem, label, legendas, 
           </div>
           <div class="flex flex-col">
             <label>Preencha suas informações a seguir e um ortodontista próximo a você entrará em contato em breve:</label>
-            <div class="flex">
-              <div class="flex flex-col w-1/2 mr-4">
+            <div class="flex flex-col w-full pl-4 md:flex-row">
+              <div class="flex flex-col mr-4 md:w-1/2">
                 <input type="text" placeholder="nome" class=" h-10 border-1 border-blue px-4 mb-[5px]" required/>
                 <input type="text" placeholder="data de nascimento" class="w-full h-10 border-1 border-blue px-4 mb-[5px]" required/>
                 <input type="text" placeholder="e-mail" class="w-full h-10 border-1 border-blue px-4 mb-[5px]" required/>
               </div>
-              <div class="flex flex-col w-1/2">
+              <div class="flex flex-col mr-4 md:w-1/2">
                 <input type="text" placeholder="sobrenome" class=" h-10 border-1 border-blue px-4 mb-[5px]" required/>
                 <input type="text" placeholder="CEP" class="w-full h-10 border-1 border-blue px-4 mb-[5px]" required/>
                 <input type="text" placeholder="número do telefone" class="w-full h-10 border-1 border-blue px-4 mb-[5px]" required/>

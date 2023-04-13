@@ -17,7 +17,7 @@ function MenuItem({ item, level = 0 }: { item: INavItem; level?: number }) {
       class="flex-grow min-h-[40px] flex items-center justify-start"
       variant={level === 0 ? "menu" : "caption"}
     >
-      {item.label}
+      {item.label} 
     </Text>
   );
 
@@ -25,7 +25,7 @@ function MenuItem({ item, level = 0 }: { item: INavItem; level?: number }) {
     <li>
       <div
         class={`flex justify-between items-center w-full py-2 ${
-          level > 0 ? "pl-2" : ""
+          level > 0 ? "" : ""
         }`}
         onClick={() => {
           if (hasChildren) open.value = !open.value;
@@ -56,7 +56,7 @@ function MenuItem({ item, level = 0 }: { item: INavItem; level?: number }) {
       </div>
 
       {hasChildren && (
-        <ul class={`flex-col ${open.value === true ? "flex" : "hidden"}`}>
+        <ul class={`flex-col ${open.value === true ? "flex" : "hidden"}` }>
           <li>
             <a href={item.href} class="w-full py-2 pl-2 inline-block">
               <Text class="underline" variant="caption">

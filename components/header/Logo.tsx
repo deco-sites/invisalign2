@@ -1,5 +1,15 @@
 import Image from "https://denopkg.com/deco-sites/std@0.2.1/components/Image.tsx";
+import Modals from "$store/islands/HeaderModals.tsx";
 
+export interface NavItem {
+  label: string;
+  href: string;
+  children?: Array<{
+    label: string;
+    href: string;
+  }>;
+  
+}
 export interface Props {
   logo?:{
     src?:string,
@@ -7,12 +17,34 @@ export interface Props {
     width: number,
     height: number
   }
-  infos?: string[]
+  infos?: string[];
+  navItems?: NavItem[];
 }
 
-function Logo({logo, infos}: Props) {
+function Logo({
+  logo, 
+  infos= [],
+  navItems = []
+}: Props) {
   return (
-    <div class="flex justify-between p-[15px]">
+    <>
+    {/* Mobile view */}
+    <div class="md:hidden ">
+      <div class="flex">
+        <div>
+            {logo?.src &&(
+              <Image 
+              src={logo.src}
+              alt={logo.alt}
+              width={logo.width}
+              height={logo.height}/>
+            )}
+        </div>
+      </div>
+
+    </div>
+    {/* Desktop View */}
+    <div class="hidden md:flex justify-between p-[15px]">
       <div>
         {logo?.src &&(
           <Image 
@@ -23,7 +55,7 @@ function Logo({logo, infos}: Props) {
         )}
       </div>
       <div>
-        <div class="text-right ml-auto font-bold">
+        <div class="text-right ml-auto font-bold md:ml-[80px] md:mt-[15px]">
           {infos && 
             <>
             <span class="border-r-2 border-[#c7c5c5] my-1">{infos[0]}{" "}</span>
@@ -31,20 +63,21 @@ function Logo({logo, infos}: Props) {
             </>
           }          
         </div>
-        <div class="flex font-heading-2 text-heading-3">
-          {infos && 
-            <>
-              <span>{infos[2]}</span>
-              <span class="pl-[40px]">{infos[3]}</span>
-            </>
-            }
+        <div class="hidden lg:flex text-black text-[12px] lg:bock ">
+            {infos && 
+              <div>
+                <span>{infos[2]}</span>
+                <span class="pl-[40px]">{infos[3]}</span>
+              </div>
+              }
             <div class="pl-[20px] flex items-center">
-              <input type="text" class="bg-[#ECECEC] h-full" placeholder="Digite seu cep"/>
+              <input type="text" class="bg-[#ECECEC]" placeholder="Digite seu cep"/>
               <a href="#" class="bg-[#489bdf]">Ir</a>
             </div>
           </div>
       </div>
     </div>
+    </>
   );
 }
 

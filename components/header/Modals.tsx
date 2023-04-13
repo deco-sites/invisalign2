@@ -6,19 +6,18 @@ import type { Props as MenuProps } from "$store/components/header/Menu.tsx";
 import Loading from "$store/components/ui/Loading.tsx";
 
 const Menu = lazy(() => import("$store/components/header/Menu.tsx"));
-const Cart = lazy(() => import("$store/components/minicart/Cart.tsx"));
 interface Props {
   menu: MenuProps;
 }
 
 function Modals({ menu }: Props) {
-  const { displayCart, displayMenu, displaySearchbar } = useUI();
+  const { displayMenu  } = useUI();
 
   return (
-    <>
+    <div class="">
       <Modal
         title="Menu"
-        mode="sidebar-left"
+        mode="center"
         loading="lazy"
         open={displayMenu.value}
         onClose={() => {
@@ -29,35 +28,7 @@ function Modals({ menu }: Props) {
           <Menu {...menu} />
         </Suspense>
       </Modal>
-
-      <Modal
-        title="Buscar"
-        mode="sidebar-right"
-        loading="lazy"
-        open={displaySearchbar.value &&
-          window?.matchMedia("(max-width: 767px)")?.matches}
-        onClose={() => {
-          displaySearchbar.value = false;
-        }}
-      >
-        <Suspense fallback={<Loading />}>
-        </Suspense>
-      </Modal>
-
-      <Modal
-        title="Minha sacola"
-        mode="sidebar-right"
-        loading="lazy"
-        open={displayCart.value}
-        onClose={() => {
-          displayCart.value = false;
-        }}
-      >
-        <Suspense fallback={<Loading />}>
-          <Cart />
-        </Suspense>
-      </Modal>
-    </>
+    </div>
   );
 }
 
