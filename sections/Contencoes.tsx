@@ -30,34 +30,35 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
       mobile,
       desktop,
       action,
-      width , 
+      width = 1600, 
       height
     } = image;
   
   return (
     <>
-        <div>
-        <Picture preload={lcp}>
-                    <Source
-                      media="(max-width: 767px)"
-                      fetchPriority={lcp ? "high" : "auto"}
-                      src={mobile}
-                      width={400}
-                      height={391}
-                    />
-                    <Source
-                      media="(min-width: 768px)"
-                      fetchPriority={lcp ? "high" : "auto"}
-                      src={desktop}
-                      width={849}
-                      height={491}
-                    />
-                    <img 
-                      loading={lcp ? "eager" : "lazy"}
-                      src={desktop}
-                      alt={alt}
-                    />
-          </Picture>
+    <div class="flex flex-col w-full items-center pl-[30px] md:flex-row-reverse justify-beetween w-full" id="contencoes" >
+        <div class="md:w-1/2 md:mt-[-12px]">
+          <Picture preload={lcp}>
+                      <Source
+                        media="(max-width: 767px)"
+                        fetchPriority={lcp ? "high" : "auto"}
+                        src={mobile}
+                        width={400}
+                        height={391}
+                      />
+                      <Source
+                        media="(min-width: 768px)"
+                        fetchPriority={lcp ? "high" : "auto"}
+                        src={desktop}
+                        width={width}
+                        height={800}
+                      />
+                      <img 
+                        loading={lcp ? "eager" : "lazy"}
+                        src={desktop}
+                        alt={alt}
+                      />
+            </Picture>
             {action && (
                 <div>
                     <small>
@@ -66,20 +67,21 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
                 </div>
             )}
         </div>
-          
-          {action && (
-            <div class="w-1/2 flex flex-col justify-center pl-[60px]">
-                <div class="flex flex-col">
-                    <span class="font-black text-6xl text-left pb-[15px]">
-                        {action.title}
-                    </span>
-                    <span class="text-orange text-4xl">{action.legend1}</span>
-                    <span class="text-3xl">{action.legend2}</span>
-                </div>
+          <div class="md:w-1/2">
+            {action && (
+              <div class="w-1/2 flex flex-col justify-center pl-[60px]">
+                  <div class="flex flex-col">
+                      <span class="font-black text-6xl text-left pb-[15px]">
+                          {action.title}
+                      </span>
+                      <span class="text-orange text-4xl">{action.legend1}</span>
+                      <span class="text-3xl">{action.legend2}</span>
+                  </div>
+              </div>
+            )}
             </div>
-          )}
-        </>
-     
+        </div>
+    </>
     );
 }
 function BannerProduct({ image, lcp }: { image: Banner; lcp?: boolean }) {
@@ -118,7 +120,7 @@ function BannerProduct({ image, lcp }: { image: Banner; lcp?: boolean }) {
                     />
                   </Picture>
                   {action && (
-                    <div class="flex flex-col bg-default justify-center shadow-lg md:w-[400px]">
+                    <div class="flex flex-col h-[368px] bg-default justify-center shadow-lg md:w-[400px]">
                       <span class="text-base text-[18px] pb-[15px] px-[15px] text-justify">
                         {action.title}
                       </span>
@@ -243,18 +245,18 @@ return (
           </Picture>
         </div>
       <div class="md:w-1/2"> 
-        {action && (
-          <div class="flex flex-col justify-center pl-[60px]">
-              <div class="flex flex-col">
-                  <span class="font-black text-orange text-4xl text-left pb-[15px]">
-                      {action.title}
-                  </span>
-                  <span class="font-black font-bold text-3xl text-left pb-[15px]">{action.legend1}</span>
-                  <span class="text-2xl text-left pb-[15px]">{action.legend2}</span>
+            {action && (
+              <div class="flex flex-col justify-center pl-[60px]">
+                  <div class="flex flex-col">
+                      <span class="font-black text-orange text-4xl text-left pb-[15px]">
+                          {action.title}
+                      </span>
+                      <span class="font-black font-bold text-3xl text-left pb-[15px]">{action.legend1}</span>
+                      <span class="text-2xl text-left pb-[15px]">{action.legend2}</span>
+                  </div>
+              
               </div>
-          
-          </div>
-        )}
+            )}
           </div>
         </div>
       </>
@@ -263,20 +265,11 @@ return (
 }
 
 function Contencoes({ images, preload,}: Props) {
-const styles = [
-        { display: 'flex', flexDirection: 'row-reverse', marginTop: '75px'},
-        { backgroundColor: 'white'},
-        { backgroundColor: 'white'},
-        { backgroundColor: 'white' },
-        { width: '1200px', height: '600px', margin: '0 auto' },
-        { width: '1200px', height: '600px', margin: '0 auto' }
-        
-];
 
 return (
     <div>
   {images?.map((image, index) => (
-  <div style={styles[index]}>
+  <div>
     {index === 0 ? (
       <BannerItem image={image} lcp={index === 0 && preload} />
     ) : index === 1 ? (

@@ -19,10 +19,8 @@ function Navbar({ items }: {
       </div>
 
       {/* Desktop Version */}
-      <div class="hidden lg:flex flex-row justify-between items-center border-b-1 border-default w-full pl-2 pr-3">
-        <div class="flex-none w-44">
-        </div>
-        <div class="flex-auto flex justify-center md:text-[16px]">
+      <div class="hidden lg:flex flex-row justify-between items-center w-full pl-2 pr-3 md:w-full">
+        <div class="flex-auto flex justify-center md:text-[15px] md:bg-black] md:mt-[5px]">
           {items.map((item) => <NavItem item={item} />)}
         </div>
       </div>

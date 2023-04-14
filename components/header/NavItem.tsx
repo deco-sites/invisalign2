@@ -10,7 +10,7 @@ function NavItem({ item }: { item: INavItem }) {
   const { href, label, children } = item;
 
   return (
-    <li class="group flex items-center relative ">
+    <li class="group flex items-center relative flex-no-wrap">
     <a href={href} class="px-4 py-3">
       <span class="font-bold">{label}</span>
     </a>

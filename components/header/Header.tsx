@@ -14,7 +14,6 @@ export interface NavItem {
     label: string;
     href: string;
   }>;
-  
 }
 
 export interface Props {
@@ -39,8 +38,8 @@ function Header(
   }: Props,
 ) {
   return (
-    <header className={`h-[120px] md:h-[170px]`}>
-      <div className={`w-full flex flex-row justify-between  p-4 lg:flex-col`}>
+    <header className={`h-[120px] shadow-md mb-2 md:h-[180px] `}>
+      <div className={`w-full flex flex-row justify-between p-4 lg:flex-col`}>
         <Logo logo={logo} infos={infos} navItems={navItems}/>
         <Navbar items={navItems} />
       </div>

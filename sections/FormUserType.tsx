@@ -44,7 +44,7 @@ export default function FormUserType({ contentBoxes, mensagem, label, legendas, 
  
   return (
     <>
-    <div class="max-w-[1100px] md:mt-[10px] mx-auto lg:mt[30px]">
+    <div class="max-w-[1100px] md:mt-[10px] mx-auto lg:mt[30px]" id="formUser">
       <form>
         <div class="flex flex-col mb-[20px]">
           <span class="text-light-blue text-[28px] font-medium">{mensagem}</span>

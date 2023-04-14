@@ -40,58 +40,59 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }, ) {
     } = image;
   
     return (
-    <>
-    <div class="h-[600px]" style={{backgroundImage: 'linear-gradient(to right, #ffffff 50%, rgb(7, 143, 255) 50%)'}}>
-            <div class="h-[400px] min-w-[100vw] flex justify-center items-center flex-row-reverse mt-[20px]">
-                <div class="mt-[200px] mr-[200px]">
-                <Picture preload={lcp}>
-                    <Source
-                    media="(max-width: 767px)"
-                    fetchPriority={lcp ? "high" : "auto"}
-                    src={mobile}
-                    width={360}
-                    height={600}
-                    />
-                    <Source
-                    media="(min-width: 768px)"
-                    fetchPriority={lcp ? "high" : "auto"}
-                    src={desktop}
-                    width={570}
-                    height={402}
-                    />
-                    <img
-                    class="object-cover sm:h-full"
-                    loading={lcp ? "eager" : "lazy"}
-                    width={width}
-                    height={height}
-                    src={desktop}
-                    alt={alt}
-                    />
-                </Picture>
-                </div>
-                <div class="">
-                {action && (
-                    <div
-                    class="max-h-min max-w-[400px] flex flex-col gap-4 bg-hover-inverse pt-[80px] rounded mr-[120px]"
-                    style={{ backdropFilter: "blur(8px)" }}
-                    >
-                    <Text variant="heading-2" tone="blue">
-                        {action.legenda1}
-                    </Text>
-                    <Text variant="heading-3" tone="blue">
-                        {action.legenda2}
-                    </Text>
-                    <Text variant="heading-3" tone="black">
-                        {action.legenda3}
-                    </Text>
-                    <div class="w-[320px]">
-                        <Button variant="primary">{action.legenda4}</Button>
-                    </div>
-                    </div>
-                )}
-                </div>
+      <>
+      <div class="h-[800px] md:h-[600px]">
+        <div
+          class="h-[600px] min-w-[100vw] flex flex-col justify-center items-center sm:flex-row-reverse sm:mt-[20px]"
+          style={{
+            backgroundImage:
+              "linear-gradient(to right, #ffffff 50%, rgb(7, 143, 255) 50%)",
+          }}
+        >
+          <div class="mt-[200px] sm:mt-0 sm:mr-0 sm:mb-4">
+            <Picture preload={lcp}>
+              <Source
+                media="(max-width: 767px)"
+                fetchPriority={lcp ? "high" : "auto"}
+                src={mobile}
+                width={360}
+                height={400}
+              />
+              <Source
+                media="(min-width: 768px)"
+                fetchPriority={lcp ? "high" : "auto"}
+                src={desktop}
+                width={570}
+                height={402}
+              />
+              <img
+                class="object-cover sm:h-full"
+                loading={lcp ? "eager" : "lazy"}
+                width={width}
+                height={height}
+                src={desktop}
+                alt={alt}
+              />
+            </Picture>
+          </div>
+          {action && (
+            <div class="mt-4 sm:mt-0 sm:mr-0 sm:max-h-min sm:max-w-[400px] flex flex-col gap-4 bg-hover-inverse pt-[80px] rounded sm:rounded-none sm:bg-transparent sm:p-0">
+              <Text variant="heading-2" tone="blue">
+                {action.legenda1}
+              </Text>
+              <Text variant="heading-3" tone="blue">
+                {action.legenda2}
+              </Text>
+              <Text variant="heading-3" tone="black">
+                {action.legenda3}
+              </Text>
+              <div class="w-[320px]">
+                <Button variant="primary">{action.legenda4}</Button>
+              </div>
             </div>
+          )}
         </div>
+      </div>
     </>
     );
 }
@@ -110,7 +111,7 @@ function Dots({ images, interval = 0 }: Props) {
           }}
         >
         </style>
-        <ol class="flex items-center justify-end col-span-full gap-4 z-10 row-start-4 absolute bottom-[35px] right-0 mr-[420px]">
+        <ol class="flex items-center col-span-full gap-4 z-10 row-start-4 absolute bottom-0 right-0">
           {images?.map((_, index) => (
             <li class="h-full">
               <button
@@ -150,7 +151,7 @@ function SliderHome({ images, preload, interval, mensagem }: Props) {
     return (
       <>
       <div class="flex">
-        <div class="mx-auto text-light-blue">{mensagem}</div>
+        <div class="mx-auto text-light-blue text-[28px]">{mensagem}</div>
       </div>
       <div
         id={id}
