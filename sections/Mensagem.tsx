@@ -39,8 +39,8 @@ function BannerItem3({ image, lcp }: { image: Banner; lcp?: boolean }) {
   
   return (
     <>
-    <div class="flex flex-row-reverse">
-        <div class="w-1/2">
+    <div class="flex flex-col md:flex-row-reverse items-center">
+        <div class="pl-[45px]">
           <Picture preload={lcp} class="mb-[60px]">
             <Source
               media="(max-width: 767px)"
@@ -64,7 +64,7 @@ function BannerItem3({ image, lcp }: { image: Banner; lcp?: boolean }) {
           </Picture>
         </div>
           {action && (
-            <div class="w-1/2 flex flex-col justify-center pl-[60px]">
+            <div class="flex flex-col items-center text-center">
               <span class="font-black font-bold text-3xl text-left pb-[15px]">{action.title}</span>                                
               <span class="pb-[15px]">{action.legend1}</span>
               <div class="w-[320px]">
@@ -80,15 +80,15 @@ function BannerItem3({ image, lcp }: { image: Banner; lcp?: boolean }) {
 function Mensagem({ title, cards, images }: MensagemProps) {
     return (
       <>
-      <div class="w-full">
+      <div class="mx-auto">
         <div class="flex flex-col items-center mt-[40px] mb-[45px]">
               <div>
                   <h2 class="text-[28px] font-medium">{title}</h2>
               </div>
-              <div class="flex mt-[30px]">
+              <div class="flex flex-col md:flex-row mt-[30px]">
               {cards.map((card) => (
-                  <div class="w-[350px] mr-[10px]">
-                      <div class="flex flex-col items-center">
+                  <div class="mr-[10px]">
+                      <div class="flex flex-col items-center md:text-center">
                           <img src={card.image} alt={card.title} width={100} height={100}/>
                           <div class=" flex flex-col items-center">
                               <h3 class="font-bold text-[22px]">{card.title}</h3>
