@@ -3,7 +3,7 @@ import Button from "$store/components/ui/Button.tsx";
 import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 import { useId } from "preact/hooks";
-import BannerGlobalColors from "./BannerGlobalColors.tsx";
+import BannerGlobalColors from "../components/ui/BannerGlobalColors.tsx"
 
 export interface Banner {
   desktop: LiveImage;
@@ -169,7 +169,7 @@ return (
   );
 }
 
-function BannerCarousel({ images, preload,}: Props) {
+function BannerHomeInicial({ images, preload,}: Props) {
 
 return (
       <div>
@@ -191,4 +191,4 @@ return (
   </div>
 );
 }
-export default BannerCarousel;
+export default BannerHomeInicial;

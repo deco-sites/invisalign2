@@ -16,26 +16,27 @@ import * as $$2 from "./islands/HeaderModals.tsx";
 import * as $$3 from "./islands/ImageTitleChange.tsx";
 import * as $$4 from "./islands/SliderJS.tsx";
 import * as $$$0 from "./sections/BannerGrid.tsx";
-import * as $$$1 from "./sections/Carousel.tsx";
-import * as $$$2 from "./sections/Contencoes.tsx";
-import * as $$$3 from "./sections/CookieConsent.tsx";
-import * as $$$4 from "./sections/DesignSystem.story.tsx";
-import * as $$$5 from "./sections/Footer.tsx";
-import * as $$$6 from "./sections/FormUserType.tsx";
-import * as $$$7 from "./sections/Header.tsx";
-import * as $$$8 from "./sections/LinkTree.tsx";
-import * as $$$9 from "./sections/Mensagem.tsx";
-import * as $$$10 from "./sections/MoreCards.tsx";
-import * as $$$11 from "./sections/SliderHome.tsx";
-import * as $$$12 from "./sections/Warnings.tsx";
-import * as $$$13 from "./sections/WhatsApp.tsx";
-import * as $$$14 from "deco-sites/std/sections/SEO.tsx";
-import * as $$$15 from "deco-sites/std/sections/SEOPDP.tsx";
-import * as $$$16 from "deco-sites/std/sections/SEOPLP.tsx";
-import * as $$$17 from "deco-sites/std/sections/configOCC.global.tsx";
-import * as $$$18 from "deco-sites/std/sections/configShopify.global.tsx";
-import * as $$$19 from "deco-sites/std/sections/configVTEX.global.tsx";
-import * as $$$20 from "deco-sites/std/sections/configYourViews.tsx";
+import * as $$$1 from "./sections/BannerHomeInicial.tsx";
+import * as $$$2 from "./sections/Carousel.tsx";
+import * as $$$3 from "./sections/Contencoes.tsx";
+import * as $$$4 from "./sections/CookieConsent.tsx";
+import * as $$$5 from "./sections/DesignSystem.story.tsx";
+import * as $$$6 from "./sections/Footer.tsx";
+import * as $$$7 from "./sections/FormUserType.tsx";
+import * as $$$8 from "./sections/Header.tsx";
+import * as $$$9 from "./sections/LinkTree.tsx";
+import * as $$$10 from "./sections/Mensagem.tsx";
+import * as $$$11 from "./sections/MoreCards.tsx";
+import * as $$$12 from "./sections/SliderHome.tsx";
+import * as $$$13 from "./sections/Warnings.tsx";
+import * as $$$14 from "./sections/WhatsApp.tsx";
+import * as $$$15 from "deco-sites/std/sections/SEO.tsx";
+import * as $$$16 from "deco-sites/std/sections/SEOPDP.tsx";
+import * as $$$17 from "deco-sites/std/sections/SEOPLP.tsx";
+import * as $$$18 from "deco-sites/std/sections/configOCC.global.tsx";
+import * as $$$19 from "deco-sites/std/sections/configShopify.global.tsx";
+import * as $$$20 from "deco-sites/std/sections/configVTEX.global.tsx";
+import * as $$$21 from "deco-sites/std/sections/configYourViews.tsx";
 import * as $$$$0 from "$live/functions/EffectSelectPage.ts";
 import * as $$$$1 from "$live/functions/MatchDate.ts";
 import * as $$$$2 from "$live/functions/MatchEnvironment.ts";
@@ -73,26 +74,27 @@ const manifest: DecoManifest = {
   },
   sections: {
     "./sections/BannerGrid.tsx": $$$0,
-    "./sections/Carousel.tsx": $$$1,
-    "./sections/Contencoes.tsx": $$$2,
-    "./sections/CookieConsent.tsx": $$$3,
-    "./sections/DesignSystem.story.tsx": $$$4,
-    "./sections/Footer.tsx": $$$5,
-    "./sections/FormUserType.tsx": $$$6,
-    "./sections/Header.tsx": $$$7,
-    "./sections/LinkTree.tsx": $$$8,
-    "./sections/Mensagem.tsx": $$$9,
-    "./sections/MoreCards.tsx": $$$10,
-    "./sections/SliderHome.tsx": $$$11,
-    "./sections/Warnings.tsx": $$$12,
-    "./sections/WhatsApp.tsx": $$$13,
-    "deco-sites/std/sections/SEO.tsx": $$$14,
-    "deco-sites/std/sections/SEOPDP.tsx": $$$15,
-    "deco-sites/std/sections/SEOPLP.tsx": $$$16,
-    "deco-sites/std/sections/configOCC.global.tsx": $$$17,
-    "deco-sites/std/sections/configShopify.global.tsx": $$$18,
-    "deco-sites/std/sections/configVTEX.global.tsx": $$$19,
-    "deco-sites/std/sections/configYourViews.tsx": $$$20,
+    "./sections/BannerHomeInicial.tsx": $$$1,
+    "./sections/Carousel.tsx": $$$2,
+    "./sections/Contencoes.tsx": $$$3,
+    "./sections/CookieConsent.tsx": $$$4,
+    "./sections/DesignSystem.story.tsx": $$$5,
+    "./sections/Footer.tsx": $$$6,
+    "./sections/FormUserType.tsx": $$$7,
+    "./sections/Header.tsx": $$$8,
+    "./sections/LinkTree.tsx": $$$9,
+    "./sections/Mensagem.tsx": $$$10,
+    "./sections/MoreCards.tsx": $$$11,
+    "./sections/SliderHome.tsx": $$$12,
+    "./sections/Warnings.tsx": $$$13,
+    "./sections/WhatsApp.tsx": $$$14,
+    "deco-sites/std/sections/SEO.tsx": $$$15,
+    "deco-sites/std/sections/SEOPDP.tsx": $$$16,
+    "deco-sites/std/sections/SEOPLP.tsx": $$$17,
+    "deco-sites/std/sections/configOCC.global.tsx": $$$18,
+    "deco-sites/std/sections/configShopify.global.tsx": $$$19,
+    "deco-sites/std/sections/configVTEX.global.tsx": $$$20,
+    "deco-sites/std/sections/configYourViews.tsx": $$$21,
   },
   functions: {
     "$live/functions/EffectSelectPage.ts": $$$$0,
@@ -213,6 +215,161 @@ const manifest: DecoManifest = {
           "borderRadius",
           "banners",
         ],
+      },
+      "outputSchema": null,
+    },
+    "./sections/BannerHomeInicial.tsx": {
+      "inputSchema": {
+        "title": " Banner Home Inicial",
+        "type": "object",
+        "properties": {
+          "images": {
+            "type": "array",
+            "items": {
+              "title": "Banner",
+              "type": "object",
+              "properties": {
+                "desktop": {
+                  "format": "image-uri",
+                  "type": "string",
+                  "title": "Desktop",
+                },
+                "mobile": {
+                  "format": "image-uri",
+                  "type": "string",
+                  "title": "Mobile",
+                },
+                "alt": {
+                  "type": "string",
+                  "title": "Alt",
+                },
+                "width": {
+                  "type": [
+                    "number",
+                    "null",
+                  ],
+                  "title": "Width",
+                },
+                "height": {
+                  "type": [
+                    "number",
+                    "null",
+                  ],
+                  "title": "Height",
+                },
+                "cores": {
+                  "type": "string",
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "const": "verde",
+                    },
+                    {
+                      "type": "string",
+                      "const": "rosa",
+                    },
+                    {
+                      "type": "string",
+                      "const": "azul",
+                    },
+                  ],
+                  "title": "Cores",
+                },
+                "alinhamento": {
+                  "type": "string",
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "const": "normal",
+                    },
+                    {
+                      "type": "string",
+                      "const": "inverso",
+                    },
+                  ],
+                  "title": "Alinhamento",
+                },
+                "action": {
+                  "title": "Action",
+                  "type": "object",
+                  "properties": {
+                    "href": {
+                      "type": "string",
+                      "title": "Href",
+                    },
+                    "title": {
+                      "type": "string",
+                      "title": "Title",
+                    },
+                    "legend1": {
+                      "type": "string",
+                      "title": "Legend1",
+                    },
+                    "connectLink": {
+                      "type": [
+                        "string",
+                        "null",
+                      ],
+                      "title": "Connect Link",
+                    },
+                    "hrefConnect": {
+                      "type": [
+                        "string",
+                        "null",
+                      ],
+                      "title": "Href Connect",
+                    },
+                    "legend2": {
+                      "type": [
+                        "string",
+                        "null",
+                      ],
+                      "title": "Legend2",
+                    },
+                    "subTitle": {
+                      "type": [
+                        "string",
+                        "null",
+                      ],
+                      "title": "Sub Title",
+                    },
+                    "label": {
+                      "type": "string",
+                      "title": "Label",
+                    },
+                  },
+                  "required": [
+                    "href",
+                    "title",
+                    "legend1",
+                    "label",
+                  ],
+                },
+              },
+              "required": [
+                "desktop",
+                "mobile",
+                "alt",
+              ],
+            },
+            "title": "Images",
+          },
+          "preload": {
+            "type": [
+              "boolean",
+              "null",
+            ],
+            "title": "Preload",
+          },
+          "interval": {
+            "type": [
+              "number",
+              "null",
+            ],
+            "title": "Interval",
+          },
+        },
+        "required": [],
       },
       "outputSchema": null,
     },

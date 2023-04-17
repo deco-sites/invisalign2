@@ -36,11 +36,13 @@ function Logo({
       <div class="flex">
         <div>
             {logo?.src &&(
+              <a href="/">
               <Image 
               src={logo.src}
               alt={logo.alt}
               width={logo.width}
               height={logo.height}/>
+            </a>
             )}
         </div>
       </div>
@@ -50,11 +52,13 @@ function Logo({
     <div class="hidden md:flex justify-between ">
       <div>
         {logo?.src &&(
+          <a href="/">
           <Image 
           src={logo.src}
           alt={logo.alt}
           width={logo.width}
           height={logo.height}/>
+          </a>
         )}
       </div>
       <div>
