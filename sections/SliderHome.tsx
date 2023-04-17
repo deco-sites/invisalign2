@@ -42,13 +42,7 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }, ) {
     return (
       <>
       <div class="h-[800px] md:h-[600px]">
-        <div
-          class="h-[600px] min-w-[100vw] flex flex-col justify-center items-center sm:flex-row-reverse sm:mt-[20px]"
-          style={{
-            backgroundImage:
-              "linear-gradient(to right, #ffffff 50%, rgb(7, 143, 255) 50%)",
-          }}
-        >
+        <div class="h-[600px] min-w-[100vw] flex flex-col justify-center items-center sm:flex-row-reverse sm:mt-[20px] md:bg-gradient-right">
           <div class="mt-[200px] sm:mt-0 sm:mr-0 sm:mb-4">
             <Picture preload={lcp}>
               <Source
@@ -76,7 +70,7 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }, ) {
             </Picture>
           </div>
           {action && (
-            <div class="mt-4 sm:mt-0 sm:mr-0 sm:max-h-min sm:max-w-[400px] flex flex-col gap-4 bg-hover-inverse pt-[80px] rounded sm:rounded-none sm:bg-transparent sm:p-0">
+            <div class="mt-4 px-[60px] py-[20px] mb-[30px] sm:mt-0 sm:mr-0 sm:max-h-min sm:max-w-[400px] flex flex-col gap-4 pt-[80px] rounded sm:rounded-none sm:bg-transparent sm:p-0">
               <Text variant="heading-2" tone="blue">
                 {action.legenda1}
               </Text>
@@ -111,7 +105,7 @@ function Dots({ images, interval = 0 }: Props) {
           }}
         >
         </style>
-        <ol class="flex items-center col-span-full gap-4 z-10 row-start-4 absolute bottom-0 right-0">
+        <ol class="flex items-center col-span-full gap-4 z-10 row-start-4 absolute bottom-[320px] md:bottom-0 right-0">
           {images?.map((_, index) => (
             <li class="h-full">
               <button

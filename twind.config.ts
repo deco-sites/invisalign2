@@ -107,6 +107,9 @@ const options: Omit<Options, "selfURL"> = {
         "slide-right": "slide-right-frame 0.4s ease normal",
         "slide-bottom": "slide-bottom-frame 0.4s ease normal",
       },
+      backgroundImage: {
+        'gradient-right': 'linear-gradient(to right, #ffffff 50%, rgb(7, 143, 255) 50%)',
+      },   
       keyframes: {
         "slide-left-frame": {
           from: { transform: "translateX(100%)" },
@@ -138,7 +141,8 @@ const options: Omit<Options, "selfURL"> = {
       lg: "1024px",
       xl: "1280px",
       xg: "1536px",
-    },    
+    },
+       
   },
   preflight: (preflight) => ({
     ...preflight,
@@ -186,11 +190,7 @@ const options: Omit<Options, "selfURL"> = {
     "snap": ([mod]) => ({ "scroll-snap-align": mod }),
     "grid-cols": gridCols,
     "grid-rows": gridRows,
-    "scroll-smooth": {
-      "scroll-behavior": "smooth",
-      "-webkit-overflow-scrolling": "touch",
-    },
-    "scrollbar-none": {
+      "scrollbar-none": {
       "scrollbar-width": "none",
       "-ms-overflow-style": "none",
       "&::-webkit-scrollbar": {
@@ -198,6 +198,7 @@ const options: Omit<Options, "selfURL"> = {
       },
     },
   },
+  
   
 };
 

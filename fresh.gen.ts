@@ -1033,7 +1033,22 @@ const manifest: DecoManifest = {
           "infos": {
             "type": "array",
             "items": {
-              "type": "string",
+              "title": "infosLinks",
+              "type": "object",
+              "properties": {
+                "href": {
+                  "type": "string",
+                  "title": "Href",
+                },
+                "label": {
+                  "type": "string",
+                  "title": "Label",
+                },
+              },
+              "required": [
+                "href",
+                "label",
+              ],
             },
             "title": "Infos",
           },

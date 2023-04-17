@@ -15,6 +15,10 @@ export interface NavItem {
     href: string;
   }>;
 }
+export interface infosLinks{
+  href: string;
+  label:string;
+}
 
 export interface Props {
   logo?: {
@@ -23,7 +27,7 @@ export interface Props {
     width: number,
     height: number
   };
-  infos?: string[]
+  infos?: infosLinks[]
   navItems?: NavItem[];
   products?: LoaderReturnType<Product[] | null>;
   suggestions?: LoaderReturnType<Suggestion | null>;

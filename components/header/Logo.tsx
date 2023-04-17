@@ -8,7 +8,10 @@ export interface NavItem {
     label: string;
     href: string;
   }>;
-  
+}
+export interface infosLinks{
+  href: string;
+  label:string;
 }
 export interface Props {
   logo?:{
@@ -17,7 +20,7 @@ export interface Props {
     width: number,
     height: number
   }
-  infos?: string[];
+  infos?: infosLinks[];
   navItems?: NavItem[];
 }
 
@@ -44,7 +47,7 @@ function Logo({
 
     </div>
     {/* Desktop View */}
-    <div class="hidden md:flex justify-between p-[15px]">
+    <div class="hidden md:flex justify-between ">
       <div>
         {logo?.src &&(
           <Image 
@@ -58,19 +61,19 @@ function Logo({
         <div class="text-right ml-auto font-bold md:ml-[80px] md:mt-[15px]">
           {infos && 
             <>
-            <span class="border-r-2 border-[#c7c5c5] my-1">{infos[0]}{" "}</span>
-            <span class="pl-[10px]">{infos[1]}</span>
+            <span class="border-r-2 border-[#c7c5c5] my-1"><a href={infos[0]?.href}>{infos[0]?.label}{" "}</a></span>
+            <span class="pl-[10px]"><a href={infos[1]?.href}>{infos[1]?.label}</a></span>
             </>
           }          
         </div>
-        <div class="hidden lg:flex text-black text-[12px] lg:bock ">
+        <div class="hidden lg:flex font-bold text-[12px] lg:bock ">
             {infos && 
               <div>
-                <span>{infos[2]}</span>
-                <span class="pl-[40px]">{infos[3]}</span>
+                <span><a href="form-user">{infos[2]?.label}</a></span>
+                <span class="pl-[40px]"><a href={infos[3]?.href}>{infos[3]?.label}</a></span>
               </div>
               }
-            <div class="pl-[20px] flex items-center">
+            <div class="pl-[20px] flex items-center ">
               <input type="text" class="bg-[#ECECEC]" placeholder="Digite seu cep"/>
               <a href="#" class="bg-[#489bdf]">Ir</a>
             </div>
