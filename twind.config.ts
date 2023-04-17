@@ -137,14 +137,12 @@ const options: Omit<Options, "selfURL"> = {
       md: "768px",
       lg: "1024px",
       xl: "1280px",
-      "2xl": "1536px",
-    },
-    
+      xg: "1536px",
+    },    
   },
   preflight: (preflight) => ({
     ...preflight,
-
-    // Stick footer to the bottom of the page
+        // Stick footer to the bottom of the page
     body: {
       display: "flex",
       flexDirection: "column",
@@ -159,6 +157,9 @@ const options: Omit<Options, "selfURL"> = {
       overflow: "hidden",
       height: "100vh",
     },
+    // html:{
+    // scrollBehavior: 'smooth'
+    // }
   }),
   plugins: {
     backdrop: {
@@ -197,6 +198,7 @@ const options: Omit<Options, "selfURL"> = {
       },
     },
   },
+  
 };
 
 export default options;

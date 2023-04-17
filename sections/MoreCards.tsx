@@ -2,13 +2,16 @@ import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 import Text from "$store/components/ui/Text.tsx";
 import Button from "$store/components/ui/Button.tsx";
 import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
+import BannerGlobalColors from "../components/ui/BannerGlobalColors.tsx";
 
 export interface Banner {
     desktop: LiveImage;
     mobile: LiveImage;
     alt: string;
     width?: number,
-    height?: number, 
+    height?: number,
+    cores?: "verde" | "rosa" | "azul",
+    alinhamento?: "normal" | "inverso" 
     action?: {
       href: string;
       title: string;
@@ -21,7 +24,7 @@ export interface Banner {
 export interface Props {
     images?: Banner[];
     preload?: boolean;
-    mensagem1?:{
+    mensagem?:{
         titulo1?: string;
         conectLink?: string;
         href?: string;
@@ -150,77 +153,22 @@ function BannerItem2({ image, lcp }: { image: Banner; lcp?: boolean }) {
     );
 }
 
-function BannerProduct2({ image, lcp }: { image: Banner; lcp?: boolean }) {
-    const {
-      alt,
-      mobile,
-      desktop,
-      action,
-      width , 
-      height
-    } = image;
-  
-  return (
-    <div class="relative mt-[50px] mx-auto max-w-[1200px]">
-          <div class="box-border z-20">
-            <div class="flex flex-col relative z-10 pt-12 pl-12 pb-12 pr-12 md:flex-row">
-                <Picture preload={lcp}>
-                  <Source
-                    media="(max-width: 767px)"
-                    fetchPriority={lcp ? "high" : "auto"}
-                    src={mobile}
-                    width={400}
-                    height={391}
-                  />
-                  <Source
-                    media="(min-width: 768px)"
-                    fetchPriority={lcp ? "high" : "auto"}
-                    src={desktop}
-                    width={849}
-                    height={491}
-                  />
-                  <img 
-                    loading={lcp ? "eager" : "lazy"}
-                    src={desktop}
-                    alt={alt}
-                  />
-                </Picture>
-                {action && (
-                  <div class="flex flex-col bg-default justify-center shadow-lg md:w-[400px]">
-                      <span class="mx-auto text-light-blue text-[24px] md:pl-[20px]">
-                        {action.title}
-                      </span>
-                      <span class="text-base pb-[10px] mx-[20px] font-bold">
-                        {action.legend1}
-                      </span>
-                      <div class="w-[320px] mx-auto mb-[20px]">
-                        <Button variant="primary">{action.label}</Button>
-                      </div>
-                  </div>
-                )}
-              </div>           
-                <div class="h-[150px] w-[300px] bg-pink-title absolute z-0 top-0 right-0 md:w-74 h-[230px]"></div>
-                <div class="h-[150px] w-[300px] bg-pink-title absolute z-0 bottom-0 left-0 md:w-74 h-[230px]"></div>
-              </div>
-          </div>
-      );
-}
 
-function MoreCards({ images, preload, mensagem1,}: Props) {
+function MoreCards({ images, preload, mensagem}: Props) {
     
     
 return (
     <>
         <div class="flex flex-col mt-[45px] items-center">
             <div class="ml-[26px]">
-                <span class="text-light-blue text-[36px] text-justify">{mensagem1?.titulo1} + backup</span>
-                <a href="#teste">{mensagem1?.conectLink}</a>
+                <span class="text-light-blue text-[36px] text-justify">{mensagem?.titulo1}</span>
+                <a href={mensagem?.href ? mensagem.href : "#warn"}>{mensagem?.conectLink}</a>
             </div>
             <div class="flex flex-col items-center md:flex-row">
                 <img src="https://images.ctfassets.net/vh25xg5i1h5l/1OJ38wIlae2AESwLTqqIGh/692c122d5fb089b13478ab50571f3f96/icon-question.svg" width={44} height={44} alt="" class="mr-[20px] mt-[20px]"/>                
-                <span class="mr-[20px]">{mensagem1?.titulo2}</span>
+                <span class="mr-[20px]">{mensagem?.titulo2}</span>
                     <div class="mt-[20px]">
-                        <Button variant="primary" class="w-[220px]"><a href={mensagem1?.href2}>{mensagem1?.label2}</a></Button>
+                        <Button variant="primary" class="w-[220px]"><a href={mensagem?.href2}>{mensagem?.label2}</a></Button>
                     </div>
             </div>
         </div>
@@ -232,7 +180,7 @@ return (
                 ) : index === 1 ? (
                 <BannerItem2 image={image} lcp={index === 1 && preload} />
                 ) : index === 2 ? (
-                <BannerProduct2 image={image} lcp={index === 2 && preload} />
+                <BannerGlobalColors image={image} lcp={index === 2 && preload} />
                 )  : index === 3 ?(
                 <BannerFullScreen image={image} lcp={index===3 && preload} />
                 ) : (

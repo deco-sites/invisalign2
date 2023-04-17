@@ -255,6 +255,38 @@ const manifest: DecoManifest = {
                   ],
                   "title": "Height",
                 },
+                "cores": {
+                  "type": "string",
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "const": "verde",
+                    },
+                    {
+                      "type": "string",
+                      "const": "rosa",
+                    },
+                    {
+                      "type": "string",
+                      "const": "azul",
+                    },
+                  ],
+                  "title": "Cores",
+                },
+                "alinhamento": {
+                  "type": "string",
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "const": "normal",
+                    },
+                    {
+                      "type": "string",
+                      "const": "inverso",
+                    },
+                  ],
+                  "title": "Alinhamento",
+                },
                 "action": {
                   "title": "Action",
                   "type": "object",
@@ -270,6 +302,20 @@ const manifest: DecoManifest = {
                     "legend1": {
                       "type": "string",
                       "title": "Legend1",
+                    },
+                    "connectLink": {
+                      "type": [
+                        "string",
+                        "null",
+                      ],
+                      "title": "Connect Link",
+                    },
+                    "hrefConnect": {
+                      "type": [
+                        "string",
+                        "null",
+                      ],
+                      "title": "Href Connect",
                     },
                     "legend2": {
                       "type": [
@@ -364,6 +410,52 @@ const manifest: DecoManifest = {
                   ],
                   "title": "Height",
                 },
+                "botao": {
+                  "type": "string",
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "const": "sim",
+                    },
+                    {
+                      "type": "string",
+                      "const": "nao",
+                    },
+                  ],
+                  "title": "Botao",
+                },
+                "cores": {
+                  "type": "string",
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "const": "verde",
+                    },
+                    {
+                      "type": "string",
+                      "const": "rosa",
+                    },
+                    {
+                      "type": "string",
+                      "const": "azul",
+                    },
+                  ],
+                  "title": "Cores",
+                },
+                "alinhamento": {
+                  "type": "string",
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "const": "normal",
+                    },
+                    {
+                      "type": "string",
+                      "const": "inverso",
+                    },
+                  ],
+                  "title": "Alinhamento",
+                },
                 "action": {
                   "title": "Action",
                   "type": "object",
@@ -376,11 +468,17 @@ const manifest: DecoManifest = {
                       "title": "Href",
                     },
                     "title": {
-                      "type": "string",
+                      "type": [
+                        "string",
+                        "null",
+                      ],
                       "title": "Title",
                     },
                     "legend1": {
-                      "type": "string",
+                      "type": [
+                        "string",
+                        "null",
+                      ],
                       "title": "Legend1",
                     },
                     "legend2": {
@@ -389,6 +487,20 @@ const manifest: DecoManifest = {
                         "null",
                       ],
                       "title": "Legend2",
+                    },
+                    "connectLink": {
+                      "type": [
+                        "string",
+                        "null",
+                      ],
+                      "title": "Connect Link",
+                    },
+                    "hrefConnect": {
+                      "type": [
+                        "string",
+                        "null",
+                      ],
+                      "title": "Href Connect",
                     },
                     "legend3": {
                       "type": [
@@ -412,10 +524,7 @@ const manifest: DecoManifest = {
                       "title": "Label",
                     },
                   },
-                  "required": [
-                    "title",
-                    "legend1",
-                  ],
+                  "required": [],
                 },
               },
               "required": [
@@ -1251,6 +1360,38 @@ const manifest: DecoManifest = {
                   ],
                   "title": "Height",
                 },
+                "cores": {
+                  "type": "string",
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "const": "verde",
+                    },
+                    {
+                      "type": "string",
+                      "const": "rosa",
+                    },
+                    {
+                      "type": "string",
+                      "const": "azul",
+                    },
+                  ],
+                  "title": "Cores",
+                },
+                "alinhamento": {
+                  "type": "string",
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "const": "normal",
+                    },
+                    {
+                      "type": "string",
+                      "const": "inverso",
+                    },
+                  ],
+                  "title": "Alinhamento",
+                },
                 "action": {
                   "title": "Action",
                   "type": "object",
@@ -1309,8 +1450,8 @@ const manifest: DecoManifest = {
             ],
             "title": "Preload",
           },
-          "mensagem1": {
-            "title": "Mensagem1",
+          "mensagem": {
+            "title": "Mensagem",
             "type": "object",
             "properties": {
               "titulo1": {

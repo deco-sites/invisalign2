@@ -18,7 +18,7 @@ function NavItem({ item }: { item: INavItem }) {
     {children && children.length > 0 &&
       (
         <div
-          class={`absolute invisible hover:visible group-hover:visible bg-default z-50 border-b-4 border-blue-400 flex flex-col gap-6 w-[15vw] rounded-b-[5px]`}
+          class={`absolute invisible hover:visible group-hover:visible bg-default z-50 border-b-4 border-blue-400 flex flex-col gap-6 w-[15vw]`}
           style={{ top: "100%", left: "0px" }}
         >
           <ul class="flex flex-col">

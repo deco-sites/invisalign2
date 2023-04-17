@@ -2,18 +2,24 @@ import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 import Text from "$store/components/ui/Text.tsx";
 import Button from "$store/components/ui/Button.tsx";
 import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
+import BannerGlobalColors from "../components/ui/BannerGlobalColors.tsx";
 
 export interface Banner {
     desktop: LiveImage;
     mobile: LiveImage;
     alt: string;
     width?: number,
-    height?: number, 
+    height?: number,
+    botao?: "sim" | "nao",
+    cores?: "verde" | "rosa" | "azul",
+    alinhamento?: "normal" | "inverso" 
     action?: {
       href?: string;
-      title: string;
-      legend1: string;
+      title?: string;
+      legend1?: string;
       legend2?: string;
+      connectLink?:string;
+      hrefConnect?:string;
       legend3?:string;
       subTitle?: string;
       label?: string;
@@ -84,58 +90,58 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
     </>
     );
 }
-function BannerProduct({ image, lcp }: { image: Banner; lcp?: boolean }) {
-    const {
-      alt,
-      mobile,
-      desktop,
-      action,
-      width , 
-      height
-    } = image;
+// function BannerProduct({ image, lcp }: { image: Banner; lcp?: boolean }) {
+//     const {
+//       alt,
+//       mobile,
+//       desktop,
+//       action,
+//       width , 
+//       height
+//     } = image;
   
-  return (
-    <div class="relative mt-[40px] mx-auto max-w-[1200px]">
-            <div class="box-border z-20">
-              <div class="flex flex-col relative z-10 pt-12 pl-12 pb-12 pr-12 md:flex-row">
-                <Picture preload={lcp}>
-                    <Source
-                      media="(max-width: 767px)"
-                      fetchPriority={lcp ? "high" : "auto"}
-                      src={mobile}
-                      width={400}
-                      height={391}
-                    />
-                    <Source
-                      media="(min-width: 768px)"
-                      fetchPriority={lcp ? "high" : "auto"}
-                      src={desktop}
-                      width={849}
-                      height={491}
-                    />
-                    <img 
-                      loading={lcp ? "eager" : "lazy"}
-                      src={desktop}
-                      alt={alt}
-                    />
-                  </Picture>
-                  {action && (
-                    <div class="flex flex-col h-[368px] bg-default justify-center shadow-lg md:w-[400px]">
-                      <span class="text-base text-[18px] pb-[15px] px-[15px] text-justify">
-                        {action.title}
-                      </span>
-                      <span class="text-base text-[14px] pb-[10px] px-[15px] text-justify">
-                        {action.legend1}
-                      </span>
-                    </div>
-                  )}
-              </div>
-              <div class="h-[150px] w-[300px] bg-green-home absolute z-0 top-0 left-0 md:w-64 h-64"></div>
-              <div class="h-[150px] w-[300px] bg-green-home absolute z-0 bottom-0 right-0 md:w-64 h-64"></div>
-            </div>
-        </div>
-      );
-}
+//   return (
+//     <div class="relative mt-[40px] mx-auto max-w-[1200px]">
+//             <div class="box-border z-20">
+//               <div class="flex flex-col relative z-10 pt-12 pl-12 pb-12 pr-12 md:flex-row">
+//                 <Picture preload={lcp}>
+//                     <Source
+//                       media="(max-width: 767px)"
+//                       fetchPriority={lcp ? "high" : "auto"}
+//                       src={mobile}
+//                       width={400}
+//                       height={391}
+//                     />
+//                     <Source
+//                       media="(min-width: 768px)"
+//                       fetchPriority={lcp ? "high" : "auto"}
+//                       src={desktop}
+//                       width={849}
+//                       height={491}
+//                     />
+//                     <img 
+//                       loading={lcp ? "eager" : "lazy"}
+//                       src={desktop}
+//                       alt={alt}
+//                     />
+//                   </Picture>
+//                   {action && (
+//                     <div class="flex flex-col h-[368px] bg-default justify-center shadow-lg md:w-[400px]">
+//                       <span class="text-base text-[18px] pb-[15px] px-[15px] text-justify">
+//                         {action.title}
+//                       </span>
+//                       <span class="text-base text-[14px] pb-[10px] px-[15px] text-justify">
+//                         {action.legend1}
+//                       </span>
+//                     </div>
+//                   )}
+//               </div>
+//               <div class="h-[150px] w-[300px] bg-green-home absolute z-0 top-0 left-0 md:w-64 h-64"></div>
+//               <div class="h-[150px] w-[300px] bg-green-home absolute z-0 bottom-0 right-0 md:w-64 h-64"></div>
+//             </div>
+//         </div>
+//       );
+// }
 function BannerItem2({ image, lcp }: { image: Banner; lcp?: boolean }) {
     const {
       alt,
@@ -268,21 +274,21 @@ function Contencoes({ images, preload,}: Props) {
 
 return (
     <div>
-  {images?.map((image, index) => (
-  <div>
-    {index === 0 ? (
-      <BannerItem image={image} lcp={index === 0 && preload} />
-    ) : index === 1 ? (
-      <BannerProduct image={image} lcp={index === 1 && preload} />
-    ) : index === 2 ? (
-      <BannerItem2 image={image} lcp={index === 2 && preload} />
-    )  : index === 3 ?(
-      <BannerItem3 image={image} lcp={index===3 && preload} />
-    ) : (
-      <BannerItem image={image} lcp={index === 4 && preload} />
-    )}
-  </div>
-))}
+        {images?.map((image, index) => (
+        <div>
+          {index === 0 ? (
+            <BannerItem image={image} lcp={index === 0 && preload} />
+          ) : index === 1 ? (
+            <BannerGlobalColors image={image} lcp={index === 1 && preload} />
+          ) : index === 2 ? (
+            <BannerItem2 image={image} lcp={index === 2 && preload} />
+          )  : index === 3 ?(
+            <BannerItem3 image={image} lcp={index===3 && preload} />
+          ) : (
+            <BannerItem image={image} lcp={index === 4 && preload} />
+          )}
+        </div>
+      ))}
 </div>
 );
 }
