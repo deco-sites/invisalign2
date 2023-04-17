@@ -96,7 +96,7 @@ export default function FormUserType({ contentBoxes, mensagem, label, legendas, 
           </div>
           <div class="flex flex-col">
             <label>Preencha suas informações a seguir e um ortodontista próximo a você entrará em contato em breve:</label>
-            <div class="flex flex-col w-full pl-4 md:flex-row">
+            <div class="flex flex-col w-full md:flex-row">
               <div class="flex flex-col mr-4 md:w-1/2">
                 <input type="text" placeholder="nome" class=" h-10 border-1 border-blue px-4 mb-[5px]" required/>
                 <input type="text" placeholder="data de nascimento" class="w-full h-10 border-1 border-blue px-4 mb-[5px]" required/>

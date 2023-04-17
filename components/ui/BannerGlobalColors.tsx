@@ -72,7 +72,7 @@ function BannerTeste({ image, lcp }: { image: Banner; lcp?: boolean }) {
                     </Picture>
                     {action && (
                       <div class="flex flex-col bg-default justify-center box-border items-center shadow-lg sm:items-center sm:w-[600px] md:px-[60px] md:py-[20px] md:items-start md:w-[600px]">
-                          <Text variant="heading-3" class="pb-[10px]">
+                          <Text variant="heading-3" class="pb-[10px] text-light-blue">
                             {action.title}
                           </Text>
                           <span class="text-base pt-[25px]">
@@ -84,8 +84,9 @@ function BannerTeste({ image, lcp }: { image: Banner; lcp?: boolean }) {
                           <Text variant="heading-3" class="pb-[10px]">
                             {action.subTitle}
                           </Text>
-                          <div class={`w-[220px] md:w-[320px] ${hiddenButton}`}>
-                            <Button variant="primary">{action.label}</Button>
+                          
+                          <div class={`w-[220px] md:w-[320px] ${hiddenButton}`}> 
+                              <Button variant="primary"><a href="form-user">{action.label}</a></Button>
                           </div>
                       </div>
                     )}

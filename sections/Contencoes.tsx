@@ -42,7 +42,7 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
   
   return (
     <>
-    <div class="flex flex-col w-full items-center pl-[30px] md:flex-row-reverse justify-beetween w-full" id="contencoes" >
+    <div class="flex flex-col w-full items-center pl-[30px] md:flex-row-reverse justify-beetween w-full md:mt-[5px]" id="contencoes" >
         <div class="md:w-1/2 md:mt-[-12px]">
           <Picture preload={lcp}>
                       <Source
@@ -90,58 +90,7 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
     </>
     );
 }
-// function BannerProduct({ image, lcp }: { image: Banner; lcp?: boolean }) {
-//     const {
-//       alt,
-//       mobile,
-//       desktop,
-//       action,
-//       width , 
-//       height
-//     } = image;
-  
-//   return (
-//     <div class="relative mt-[40px] mx-auto max-w-[1200px]">
-//             <div class="box-border z-20">
-//               <div class="flex flex-col relative z-10 pt-12 pl-12 pb-12 pr-12 md:flex-row">
-//                 <Picture preload={lcp}>
-//                     <Source
-//                       media="(max-width: 767px)"
-//                       fetchPriority={lcp ? "high" : "auto"}
-//                       src={mobile}
-//                       width={400}
-//                       height={391}
-//                     />
-//                     <Source
-//                       media="(min-width: 768px)"
-//                       fetchPriority={lcp ? "high" : "auto"}
-//                       src={desktop}
-//                       width={849}
-//                       height={491}
-//                     />
-//                     <img 
-//                       loading={lcp ? "eager" : "lazy"}
-//                       src={desktop}
-//                       alt={alt}
-//                     />
-//                   </Picture>
-//                   {action && (
-//                     <div class="flex flex-col h-[368px] bg-default justify-center shadow-lg md:w-[400px]">
-//                       <span class="text-base text-[18px] pb-[15px] px-[15px] text-justify">
-//                         {action.title}
-//                       </span>
-//                       <span class="text-base text-[14px] pb-[10px] px-[15px] text-justify">
-//                         {action.legend1}
-//                       </span>
-//                     </div>
-//                   )}
-//               </div>
-//               <div class="h-[150px] w-[300px] bg-green-home absolute z-0 top-0 left-0 md:w-64 h-64"></div>
-//               <div class="h-[150px] w-[300px] bg-green-home absolute z-0 bottom-0 right-0 md:w-64 h-64"></div>
-//             </div>
-//         </div>
-//       );
-// }
+
 function BannerItem2({ image, lcp }: { image: Banner; lcp?: boolean }) {
     const {
       alt,

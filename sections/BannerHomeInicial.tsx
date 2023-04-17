@@ -87,10 +87,10 @@ return (
                           <span>{action.legend2}</span>
                   </div>            
                     <Text variant="heading-3" class="pb-[10px]">
-                      {action.subTitle}
+                      {action.subTitle}aa
                     </Text>
                     <div class="w-[120px] pl-[60px] md:pl-0">
-                      <Button variant="primary"><a href={action?.href ? action.href : "#"}>{action.label}</a></Button>
+                        <Button variant="primary"><a href="form-user">{action.label}</a></Button>
                     </div>
                   </div>
                   )}
@@ -159,7 +159,7 @@ return (
                   <Text variant="heading-3" class="pb-[10px] mt-[10px]">
                     {action.subTitle}
                   </Text>
-                  <Button variant="primary">{action.label}</Button>
+                  <Button variant="primary"><a href="form-user">{action.label}</a></Button>
                 </div>
               )}
             </div>

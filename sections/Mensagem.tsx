@@ -68,7 +68,7 @@ function BannerItem3({ image, lcp }: { image: Banner; lcp?: boolean }) {
               <span class="font-black font-bold text-3xl text-left pb-[15px]">{action.title}</span>                                
               <span class="pb-[15px]">{action.legend1}</span>
               <div class="w-[320px]">
-               <Button variant="secondary">{action.label}</Button>
+               <Button variant="secondary"><a href="form-user">{action.label}</a></Button>
             </div>
             </div>
           )}

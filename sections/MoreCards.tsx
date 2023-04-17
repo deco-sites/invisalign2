@@ -88,7 +88,7 @@ return (
                       {action.subTitle}
                     </Text>
                     <div class="">
-                      <Button variant="primary" class="w-[220px] mb-[30px]">{action?.label}</Button>
+                      <Button variant="primary" class="w-[220px] mb-[30px]"><a href="contencoes">{action?.label}</a></Button>
                   </div>
                 </div>
               )}
@@ -143,7 +143,7 @@ function BannerItem2({ image, lcp }: { image: Banner; lcp?: boolean }) {
                   <span>{action.legend1}</span>
               </div>   
               <div class="w-[320px] mb-[20px]">
-                 <Button variant="primary">{action.label}</Button>
+                 <Button variant="primary"><a href="contencoes">{action.label}</a></Button>
               </div>
             </div>
           )}

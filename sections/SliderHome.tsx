@@ -81,7 +81,7 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }, ) {
                 {action.legenda3}
               </Text>
               <div class="w-[320px]">
-                <Button variant="primary">{action.legenda4}</Button>
+              <Button variant="primary"><a href="contencoes">{action.legenda4}</a></Button>
               </div>
             </div>
           )}

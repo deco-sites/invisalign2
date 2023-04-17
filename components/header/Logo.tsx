@@ -70,7 +70,7 @@ function Logo({
             </>
           }          
         </div>
-        <div class="hidden lg:flex font-bold text-[12px] lg:bock ">
+        <div class="hidden lg:flex font-bold text-[16px] lg:bock ">
             {infos && 
               <div>
                 <span><a href="form-user">{infos[2]?.label}</a></span>
